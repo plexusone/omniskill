@@ -37,6 +37,7 @@ OmniSkill provides a common interface for defining, registering, and invoking AI
 - **mcp/server/** - MCP server runtime with tools, prompts, resources
 - **mcp/client/** - MCP client for connecting to remote servers
 - **mcp/oauth2/** - OAuth 2.1 Authorization Server for authenticated MCP
+- **voicetools/** - Voice call control tools (transfer, hold, consult, conference)
 
 Skills can be invoked via:
 
@@ -195,12 +196,48 @@ github.com/plexusone/omniskill
 ├── installer/   # Dependency management for skills
 ├── pack/        # Skill pack interface for markdown bundles
 ├── registry/    # Skill registration and discovery
+├── voicetools/  # Voice call control tools
+│   ├── context.go     # CallContext, Call, Transport interfaces
+│   ├── registry.go    # NewVoiceSkill() registration
+│   ├── transfer.go    # transfer_call tool
+│   ├── hold.go        # hold_call, unhold_call tools
+│   ├── consult.go     # consult_agent tool
+│   └── conference.go  # add_to_conference tool
 ├── mcp/
 │   ├── server/  # MCP server runtime
 │   ├── client/  # MCP client for remote servers
 │   └── oauth2/  # OAuth 2.1 authorization server
 └── doc.go
 ```
+
+## Voice Tools
+
+The `voicetools` package provides AI agent tools for controlling voice calls:
+
+```go
+import (
+    "github.com/plexusone/omniskill/voicetools"
+)
+
+// Create call context with transport and agent registry
+callCtx := voicetools.NewCallContext(call, transport, agentRegistry)
+
+// Create voice skill with all call control tools
+voiceSkill := voicetools.NewVoiceSkill(callCtx)
+
+// Register with MCP server
+rt.RegisterSkill(voiceSkill)
+```
+
+### Available Tools
+
+| Tool | Description |
+|------|-------------|
+| `transfer_call` | Transfer call to another number or agent queue |
+| `hold_call` | Place caller on hold with optional music |
+| `unhold_call` | Resume call from hold |
+| `consult_agent` | Query specialist AI without transferring |
+| `add_to_conference` | Add participants to conference call |
 
 ## Documentation
 
