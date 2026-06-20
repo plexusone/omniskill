@@ -7,6 +7,44 @@
   "maintainers": ["plexusone"],
   "releases": [
     {
+      "version": "v0.9.0",
+      "date": "2026-06-20",
+      "highlights": [
+        { "description": "New `voicetools/` package for AI agent voice call control" },
+        { "description": "New `clawhub/` package for ClawHub marketplace integration" },
+        { "description": "GitHub installer for installing skills from GitHub releases" }
+      ],
+      "added": [
+        { "description": "`voicetools.CallContext` interface for accessing call state and transport", "commit": "1ffe747" },
+        { "description": "`voicetools.Call` and `voicetools.TelephonyTransport` interfaces for telephony operations", "commit": "1ffe747" },
+        { "description": "`voicetools.TransferCallTool` for transferring calls to numbers or agent queues", "commit": "2746d91" },
+        { "description": "`voicetools.HoldCallTool` and `voicetools.UnholdCallTool` for call hold management", "commit": "2746d91" },
+        { "description": "`voicetools.ConsultAgentTool` for querying specialist AI agents without transfer", "commit": "9dd65e4" },
+        { "description": "`voicetools.AddToConferenceTool` for adding participants to conference calls", "commit": "9dd65e4" },
+        { "description": "`voicetools.NewVoiceSkill()` registration helper for all voice tools", "commit": "0daaea6" },
+        { "description": "`clawhub.Hub` API client for ClawHub skill marketplace", "commit": "651b6a2" },
+        { "description": "`clawhub.Manifest` for parsing CLAWHUB.json skill manifests", "commit": "651b6a2" },
+        { "description": "`clawhub.Resolver` for dependency resolution with semver support", "commit": "651b6a2" },
+        { "description": "`clawhub.Security` for skill security scanning and vulnerability detection", "commit": "651b6a2" },
+        { "description": "`installer.ClawHubInstaller` for installing skills from ClawHub marketplace", "commit": "5bf1890" },
+        { "description": "`installer.GitHubInstaller` for installing skills from GitHub repositories and releases", "commit": "5bf1890" }
+      ],
+      "documentation": [
+        { "description": "Voice tools concept guide with integration examples", "commit": "723ad0e" },
+        { "description": "ClawHub marketplace documentation", "commit": "53f2e4f" },
+        { "description": "Voice parity implementation specification", "commit": "9ed6757" },
+        { "description": "Update README with voicetools usage", "commit": "526c8ad" },
+        { "description": "Update site navigation for new features", "commit": "7cc8e92" }
+      ],
+      "tests": [
+        { "description": "Unit tests for all voice control tools", "commit": "03faee5" }
+      ],
+      "dependencies": [
+        { "description": "Add golang.org/x/mod v0.37.0 for semver resolution", "commit": "3090df9" },
+        { "description": "Bump github.com/grokify/mogo to v0.74.6", "commit": "178800e" }
+      ]
+    },
+    {
       "version": "v0.8.0",
       "date": "2026-05-23",
       "highlights": [
