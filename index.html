@@ -631,6 +631,29 @@
   
   
     <li class="md-nav__item">
+      <a href="concepts/clawhub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ClawHub Marketplace
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="concepts/packs/" class="md-nav__link">
         
   
@@ -805,12 +828,12 @@
   
   
     <li class="md-nav__item">
-      <a href="api/" class="md-nav__link">
+      <a href="voicetools/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    API Reference
+    Voice Tools
     
   </span>
   
@@ -850,7 +873,7 @@
   
   
   <span class="md-ellipsis">
-    Releases
+    Specs
     
   </span>
   
@@ -861,9 +884,129 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
+            Specs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="specs/features/voice-parity/PLAN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Voice Parity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Releases
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
             Releases
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="releases/v0.9.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    v0.9.0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1185,6 +1328,8 @@
 <li><strong>Zero-Overhead Library Mode</strong> - Call tools directly without JSON-RPC</li>
 <li><strong>OAuth 2.1 Support</strong> - Built-in authentication for public MCP servers</li>
 <li><strong>Type-Safe Handlers</strong> - Generic handlers with automatic schema inference</li>
+<li><strong>ClawHub Marketplace</strong> - Discover, install, and share skills</li>
+<li><strong>GitHub Integration</strong> - Install skills from GitHub repositories and releases</li>
 </ul>
 <h2 id="quick-example">Quick Example<a class="headerlink" href="#quick-example" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
@@ -1239,13 +1384,18 @@
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── skill/       # Core Skill and Tool interfaces
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├── loader/      # Skill loaders (SKILL.md, Go, etc.)
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>├── installer/   # Dependency installation management
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>├── registry/    # Skill registration and discovery
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>├── pack/        # Skill pack interface
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>├── mcp/
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>│   ├── server/  # MCP server runtime
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>│   ├── client/  # MCP client for remote servers
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>│   └── oauth2/  # OAuth 2.1 authorization server
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>└── doc.go
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>├── clawhub/     # ClawHub marketplace integration
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>│   ├── hub.go       # API client
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>│   ├── manifest.go  # CLAWHUB.json parsing
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>│   ├── resolver.go  # Dependency resolution
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>│   └── security.go  # Security scanning
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>├── registry/    # Skill registration and discovery
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>├── pack/        # Skill pack interface
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>├── mcp/
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>│   ├── server/  # MCP server runtime
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>│   ├── client/  # MCP client for remote servers
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>│   └── oauth2/  # OAuth 2.1 authorization server
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>└── doc.go
 </code></pre></div>
 <h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1259,6 +1409,7 @@
 <li><a href="concepts/tools/">Tools</a></li>
 <li><a href="concepts/loader/">Loader</a> - Loading SKILL.md and other formats</li>
 <li><a href="concepts/installer/">Installer</a> - Managing skill dependencies</li>
+<li><a href="concepts/clawhub/">ClawHub Marketplace</a> - Discover and install skills</li>
 <li><a href="concepts/registry/">Registry</a></li>
 </ul>
 
