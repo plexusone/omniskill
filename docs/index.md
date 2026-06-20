@@ -16,6 +16,8 @@ OmniSkill provides a common interface for defining, registering, and invoking AI
 - **Zero-Overhead Library Mode** - Call tools directly without JSON-RPC
 - **OAuth 2.1 Support** - Built-in authentication for public MCP servers
 - **Type-Safe Handlers** - Generic handlers with automatic schema inference
+- **ClawHub Marketplace** - Discover, install, and share skills
+- **GitHub Integration** - Install skills from GitHub repositories and releases
 
 ## Quick Example
 
@@ -75,6 +77,11 @@ github.com/plexusone/omniskill
 ├── skill/       # Core Skill and Tool interfaces
 ├── loader/      # Skill loaders (SKILL.md, Go, etc.)
 ├── installer/   # Dependency installation management
+├── clawhub/     # ClawHub marketplace integration
+│   ├── hub.go       # API client
+│   ├── manifest.go  # CLAWHUB.json parsing
+│   ├── resolver.go  # Dependency resolution
+│   └── security.go  # Security scanning
 ├── registry/    # Skill registration and discovery
 ├── pack/        # Skill pack interface
 ├── mcp/
@@ -96,4 +103,5 @@ github.com/plexusone/omniskill
 - [Tools](concepts/tools.md)
 - [Loader](concepts/loader.md) - Loading SKILL.md and other formats
 - [Installer](concepts/installer.md) - Managing skill dependencies
+- [ClawHub Marketplace](concepts/clawhub.md) - Discover and install skills
 - [Registry](concepts/registry.md)

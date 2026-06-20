@@ -54,12 +54,16 @@ nav:
       - Tools: concepts/tools.md
       - Loader: concepts/loader.md
       - Installer: concepts/installer.md
+      - ClawHub Marketplace: concepts/clawhub.md
       - Packs: concepts/packs.md
       - Registry: concepts/registry.md
   - MCP:
       - Server: mcp/server.md
       - Client: mcp/client.md
       - OAuth2: mcp/oauth2.md
+  - Voice Tools: voicetools/index.md
+  - Specs:
+      - Voice Parity: specs/features/voice-parity/PLAN.md
   - API Reference: api/index.md
   - Releases:
       - v0.8.0: releases/v0.8.0.md
