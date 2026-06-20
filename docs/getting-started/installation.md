@@ -2,7 +2,7 @@
 
 ## Requirements
 
-- Go 1.21 or later
+- Go 1.26 or later
 - Git
 
 ## Install
@@ -31,6 +31,12 @@ import (
 
     // OAuth2 (for authenticated MCP servers)
     "github.com/plexusone/omniskill/mcp/oauth2"
+
+    // Voice call control tools
+    "github.com/plexusone/omniskill/voicetools"
+
+    // ClawHub marketplace integration
+    "github.com/plexusone/omniskill/clawhub"
 )
 ```
 

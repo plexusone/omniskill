@@ -84,6 +84,7 @@ github.com/plexusone/omniskill
 │   └── security.go  # Security scanning
 ├── registry/    # Skill registration and discovery
 ├── pack/        # Skill pack interface
+├── voicetools/  # Voice call control tools
 ├── mcp/
 │   ├── server/  # MCP server runtime
 │   ├── client/  # MCP client for remote servers
@@ -104,4 +105,5 @@ github.com/plexusone/omniskill
 - [Loader](concepts/loader.md) - Loading SKILL.md and other formats
 - [Installer](concepts/installer.md) - Managing skill dependencies
 - [ClawHub Marketplace](concepts/clawhub.md) - Discover and install skills
+- [Voice Tools](voicetools/index.md) - AI agent voice call control
 - [Registry](concepts/registry.md)

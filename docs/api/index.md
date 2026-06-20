@@ -10,6 +10,8 @@ Full API documentation is available on pkg.go.dev:
 - [github.com/plexusone/omniskill/mcp/server](https://pkg.go.dev/github.com/plexusone/omniskill/mcp/server)
 - [github.com/plexusone/omniskill/mcp/client](https://pkg.go.dev/github.com/plexusone/omniskill/mcp/client)
 - [github.com/plexusone/omniskill/mcp/oauth2](https://pkg.go.dev/github.com/plexusone/omniskill/mcp/oauth2)
+- [github.com/plexusone/omniskill/voicetools](https://pkg.go.dev/github.com/plexusone/omniskill/voicetools)
+- [github.com/plexusone/omniskill/clawhub](https://pkg.go.dev/github.com/plexusone/omniskill/clawhub)
 
 ## Quick Reference
 
