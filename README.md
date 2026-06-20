@@ -32,6 +32,7 @@ OmniSkill provides a common interface for defining, registering, and invoking AI
 - **skill/** - Core Skill and Tool interfaces, CommandTool for CLI wrapping
 - **loader/** - Skill loaders for SKILL.md markdown and Go formats
 - **installer/** - Dependency management for skill requirements
+- **clawhub/** - ClawHub marketplace integration for skill discovery
 - **pack/** - Skill pack interface for embedding markdown skills
 - **registry/** - Skill registration and discovery
 - **mcp/server/** - MCP server runtime with tools, prompts, resources
@@ -194,6 +195,11 @@ github.com/plexusone/omniskill
 ├── skill/       # Core Skill and Tool interfaces, CommandTool
 ├── loader/      # Skill loaders for SKILL.md and Go formats
 ├── installer/   # Dependency management for skills
+├── clawhub/     # ClawHub marketplace integration
+│   ├── hub.go       # API client
+│   ├── manifest.go  # CLAWHUB.json parsing
+│   ├── resolver.go  # Dependency resolution
+│   └── security.go  # Security scanning
 ├── pack/        # Skill pack interface for markdown bundles
 ├── registry/    # Skill registration and discovery
 ├── voicetools/  # Voice call control tools
