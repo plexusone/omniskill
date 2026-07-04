@@ -5,10 +5,6 @@
          <lastmod>2026-07-04</lastmod>
     </url>
     <url>
-         <loc>https://plexusone.github.io/omniskill/role-interface/</loc>
-         <lastmod>2026-07-04</lastmod>
-    </url>
-    <url>
          <loc>https://plexusone.github.io/omniskill/api/</loc>
          <lastmod>2026-07-04</lastmod>
     </url>
@@ -122,6 +118,38 @@
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/releases/v0.9.0/</loc>
+         <lastmod>2026-07-04</lastmod>
+    </url>
+    <url>
+         <loc>https://plexusone.github.io/omniskill/roles/</loc>
+         <lastmod>2026-07-04</lastmod>
+    </url>
+    <url>
+         <loc>https://plexusone.github.io/omniskill/roles/behaviors/</loc>
+         <lastmod>2026-07-04</lastmod>
+    </url>
+    <url>
+         <loc>https://plexusone.github.io/omniskill/roles/delegation/</loc>
+         <lastmod>2026-07-04</lastmod>
+    </url>
+    <url>
+         <loc>https://plexusone.github.io/omniskill/roles/interface/</loc>
+         <lastmod>2026-07-04</lastmod>
+    </url>
+    <url>
+         <loc>https://plexusone.github.io/omniskill/roles/metrics/</loc>
+         <lastmod>2026-07-04</lastmod>
+    </url>
+    <url>
+         <loc>https://plexusone.github.io/omniskill/roles/policies/</loc>
+         <lastmod>2026-07-04</lastmod>
+    </url>
+    <url>
+         <loc>https://plexusone.github.io/omniskill/roles/spec/</loc>
+         <lastmod>2026-07-04</lastmod>
+    </url>
+    <url>
+         <loc>https://plexusone.github.io/omniskill/roles/workflows/</loc>
          <lastmod>2026-07-04</lastmod>
     </url>
     <url>

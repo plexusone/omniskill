@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://plexusone.github.io/omniskill/github/">
+        <link rel="canonical" href="https://plexusone.github.io/omniskill/roles/">
       
       
-        <link rel="prev" href="../voicetools/">
+        <link rel="prev" href="../mcp/oauth2/">
       
       
-        <link rel="next" href="../specs/features/voice-parity/PLAN/">
+        <link rel="next" href="interface/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>GitHub - OmniSkill</title>
+        <title>Overview - OmniSkill</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#github-skill" class="md-skip">
+        <a href="#roles-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              GitHub
+              Overview
             
           </span>
         </div>
@@ -839,8 +839,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -851,13 +853,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -878,7 +878,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -893,10 +893,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../roles/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -912,6 +939,198 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Roles?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a Role?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roles-vs-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roles vs Prompts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subroles-specialization-without-duplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SubRoles: Specialization Without Duplication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SubRoles: Specialization Without Duplication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-meeting-pm-with-subroles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Meeting PM with SubRoles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#role-composition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role Composition
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Role Composition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-skill-composition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Skill Composition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-subrole-inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. SubRole Inheritance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-delegation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Delegation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#meeting-program-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Meeting Program Manager
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-reviewer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Reviewer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#support-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Support Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -924,7 +1143,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../roles/interface/" class="md-nav__link">
+      <a href="interface/" class="md-nav__link">
         
   
   
@@ -952,7 +1171,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../roles/spec/" class="md-nav__link">
+      <a href="spec/" class="md-nav__link">
         
   
   
@@ -980,7 +1199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../roles/behaviors/" class="md-nav__link">
+      <a href="behaviors/" class="md-nav__link">
         
   
   
@@ -1008,7 +1227,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../roles/policies/" class="md-nav__link">
+      <a href="policies/" class="md-nav__link">
         
   
   
@@ -1036,7 +1255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../roles/delegation/" class="md-nav__link">
+      <a href="delegation/" class="md-nav__link">
         
   
   
@@ -1064,7 +1283,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../roles/workflows/" class="md-nav__link">
+      <a href="workflows/" class="md-nav__link">
         
   
   
@@ -1092,7 +1311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../roles/metrics/" class="md-nav__link">
+      <a href="metrics/" class="md-nav__link">
         
   
   
@@ -1151,37 +1370,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    GitHub
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../github/" class="md-nav__link">
         
   
   
@@ -1197,248 +1389,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Installation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Quick Start
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Configuration
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Configuration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#github-enterprise" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        GitHub Enterprise
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#default-repository" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Default Repository
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#available-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Available Tools
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Available Tools">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#issue-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Issue Tools
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pull-request-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pull Request Tools
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#search-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Search Tools
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tool-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tool Parameters
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Tool Parameters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#list_issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        list_issues
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create_issue" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        create_issue
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#search_code" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        search_code
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example Usage
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Example Usage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#direct-tool-calls-library-mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Direct Tool Calls (Library Mode)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#with-mcp-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        With MCP Server
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#required-permissions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Required Permissions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        See Also
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1927,10 +1877,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#why-roles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation
+        Why Roles?
       
     </span>
   </a>
@@ -1938,10 +1888,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
+  <a href="#what-is-a-role" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Quick Start
+        What is a Role?
       
     </span>
   </a>
@@ -1949,33 +1899,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#roles-vs-prompts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuration
+        Roles vs Prompts
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Configuration">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subroles-specialization-without-duplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SubRoles: Specialization Without Duplication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SubRoles: Specialization Without Duplication">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#github-enterprise" class="md-nav__link">
+  <a href="#example-meeting-pm-with-subroles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        GitHub Enterprise
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#default-repository" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Default Repository
+        Example: Meeting PM with SubRoles
       
     </span>
   </a>
@@ -1988,22 +1938,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#available-tools" class="md-nav__link">
+  <a href="#role-composition" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Available Tools
+        Role Composition
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Available Tools">
+    <nav class="md-nav" aria-label="Role Composition">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#issue-tools" class="md-nav__link">
+  <a href="#1-skill-composition" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Issue Tools
+        1. Skill Composition
       
     </span>
   </a>
@@ -2011,10 +1961,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#pull-request-tools" class="md-nav__link">
+  <a href="#2-subrole-inheritance" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pull Request Tools
+        2. SubRole Inheritance
       
     </span>
   </a>
@@ -2022,10 +1972,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#search-tools" class="md-nav__link">
+  <a href="#3-delegation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Search Tools
+        3. Delegation
       
     </span>
   </a>
@@ -2038,22 +1988,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tool-parameters" class="md-nav__link">
+  <a href="#use-cases" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tool Parameters
+        Use Cases
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Tool Parameters">
+    <nav class="md-nav" aria-label="Use Cases">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#list_issues" class="md-nav__link">
+  <a href="#meeting-program-manager" class="md-nav__link">
     <span class="md-ellipsis">
       
-        list_issues
+        Meeting Program Manager
       
     </span>
   </a>
@@ -2061,10 +2011,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create_issue" class="md-nav__link">
+  <a href="#code-reviewer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        create_issue
+        Code Reviewer
       
     </span>
   </a>
@@ -2072,10 +2022,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#search_code" class="md-nav__link">
+  <a href="#support-agent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        search_code
+        Support Agent
       
     </span>
   </a>
@@ -2088,60 +2038,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-usage" class="md-nav__link">
+  <a href="#getting-started" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example Usage
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Example Usage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#direct-tool-calls-library-mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Direct Tool Calls (Library Mode)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#with-mcp-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        With MCP Server
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#required-permissions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Required Permissions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        See Also
+        Getting Started
       
     </span>
   </a>
@@ -2168,319 +2068,221 @@
   
 
 
-<h1 id="github-skill">GitHub Skill<a class="headerlink" href="#github-skill" title="Permanent link">&para;</a></h1>
-<p>The <code>github</code> package provides a skill for AI agents to interact with GitHub repositories, including issues, pull requests, and code search.</p>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/plexusone/omniskill/github&quot;</span>
-</code></pre></div>
-<h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="s">&quot;github.com/plexusone/omniskill/github&quot;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="s">&quot;github.com/plexusone/omniskill/mcp/server&quot;</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">)</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1">// Create GitHub skill</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nx">ghSkill</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">github</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">github</span><span class="p">.</span><span class="nx">Config</span><span class="p">{</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nx">Token</span><span class="p">:</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Getenv</span><span class="p">(</span><span class="s">&quot;GITHUB_TOKEN&quot;</span><span class="p">),</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">})</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1">// Initialize</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">ghSkill</span><span class="p">.</span><span class="nx">Init</span><span class="p">(</span><span class="nx">ctx</span><span class="p">);</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nx">log</span><span class="p">.</span><span class="nx">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">}</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="k">defer</span><span class="w"> </span><span class="nx">ghSkill</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="c1">// Register with MCP server</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="nx">rt</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">server</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">impl</span><span class="p">,</span><span class="w"> </span><span class="kc">nil</span><span class="p">)</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="nx">rt</span><span class="p">.</span><span class="nx">RegisterSkill</span><span class="p">(</span><span class="nx">ghSkill</span><span class="p">)</span>
-</code></pre></div>
-<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">type</span><span class="w"> </span><span class="nx">Config</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="c1">// Token is the GitHub personal access token (required)</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nx">Token</span><span class="w"> </span><span class="kt">string</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="c1">// BaseURL is the GitHub API base URL</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="c1">// Defaults to https://api.github.com</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="c1">// Set for GitHub Enterprise (e.g., https://github.mycompany.com/api/v3)</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nx">BaseURL</span><span class="w"> </span><span class="kt">string</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="c1">// DefaultOwner is the default repository owner</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="nx">DefaultOwner</span><span class="w"> </span><span class="kt">string</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="c1">// DefaultRepo is the default repository name</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="nx">DefaultRepo</span><span class="w"> </span><span class="kt">string</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="p">}</span>
-</code></pre></div>
-<h3 id="github-enterprise">GitHub Enterprise<a class="headerlink" href="#github-enterprise" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">ghSkill</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">github</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">github</span><span class="p">.</span><span class="nx">Config</span><span class="p">{</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nx">Token</span><span class="p">:</span><span class="w">   </span><span class="nx">os</span><span class="p">.</span><span class="nx">Getenv</span><span class="p">(</span><span class="s">&quot;GHE_TOKEN&quot;</span><span class="p">),</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nx">BaseURL</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://github.mycompany.com/api/v3&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">})</span>
-</code></pre></div>
-<h3 id="default-repository">Default Repository<a class="headerlink" href="#default-repository" title="Permanent link">&para;</a></h3>
-<p>Set defaults to avoid specifying owner/repo on every call:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nx">ghSkill</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">github</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">github</span><span class="p">.</span><span class="nx">Config</span><span class="p">{</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nx">Token</span><span class="p">:</span><span class="w">        </span><span class="nx">os</span><span class="p">.</span><span class="nx">Getenv</span><span class="p">(</span><span class="s">&quot;GITHUB_TOKEN&quot;</span><span class="p">),</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nx">DefaultOwner</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;plexusone&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nx">DefaultRepo</span><span class="p">:</span><span class="w">  </span><span class="s">&quot;omniskill&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">})</span>
-</code></pre></div>
-<h2 id="available-tools">Available Tools<a class="headerlink" href="#available-tools" title="Permanent link">&para;</a></h2>
-<h3 id="issue-tools">Issue Tools<a class="headerlink" href="#issue-tools" title="Permanent link">&para;</a></h3>
+<h1 id="roles-overview">Roles Overview<a class="headerlink" href="#roles-overview" title="Permanent link">&para;</a></h1>
+<p>Roles are the heart of OmniSkill's agent architecture. They define <strong>who</strong> an agent is, not just what it can do.</p>
+<h2 id="why-roles">Why Roles?<a class="headerlink" href="#why-roles" title="Permanent link">&para;</a></h2>
+<p>Traditional AI agent setups often rely on a single system prompt to define behavior. This approach has limitations:</p>
 <table>
 <thead>
 <tr>
-<th>Tool</th>
-<th>Description</th>
+<th>Approach</th>
+<th>Problem</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>list_issues</code></td>
-<td>List issues with filters (state, labels)</td>
+<td>Single prompt</td>
+<td>Hard to reuse, test, or version</td>
 </tr>
 <tr>
-<td><code>get_issue</code></td>
-<td>Get details of a specific issue</td>
+<td>Ad-hoc tools</td>
+<td>No governance or accountability</td>
 </tr>
 <tr>
-<td><code>create_issue</code></td>
-<td>Create a new issue</td>
-</tr>
-<tr>
-<td><code>update_issue</code></td>
-<td>Update an existing issue (title, body, state, labels)</td>
-</tr>
-<tr>
-<td><code>add_issue_comment</code></td>
-<td>Add a comment to an issue</td>
+<td>Monolithic agents</td>
+<td>Can't specialize or delegate</td>
 </tr>
 </tbody>
 </table>
-<h3 id="pull-request-tools">Pull Request Tools<a class="headerlink" href="#pull-request-tools" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Tool</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>list_pull_requests</code></td>
-<td>List PRs with filters (state, base, head)</td>
-</tr>
-<tr>
-<td><code>get_pull_request</code></td>
-<td>Get details of a specific PR</td>
-</tr>
-<tr>
-<td><code>add_pull_request_comment</code></td>
-<td>Add a comment to a PR</td>
-</tr>
-</tbody>
-</table>
-<h3 id="search-tools">Search Tools<a class="headerlink" href="#search-tools" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Tool</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>search_code</code></td>
-<td>Search code across repositories</td>
-</tr>
-<tr>
-<td><code>search_issues</code></td>
-<td>Search issues and pull requests</td>
-</tr>
-</tbody>
-</table>
-<h2 id="tool-parameters">Tool Parameters<a class="headerlink" href="#tool-parameters" title="Permanent link">&para;</a></h2>
-<h3 id="list_issues">list_issues<a class="headerlink" href="#list_issues" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>owner</code></td>
-<td>string</td>
-<td>No</td>
-<td>Repository owner (uses default if not set)</td>
-</tr>
-<tr>
-<td><code>repo</code></td>
-<td>string</td>
-<td>No</td>
-<td>Repository name (uses default if not set)</td>
-</tr>
-<tr>
-<td><code>state</code></td>
-<td>string</td>
-<td>No</td>
-<td>Issue state: "open", "closed", "all" (default: "open")</td>
-</tr>
-<tr>
-<td><code>labels</code></td>
-<td>string</td>
-<td>No</td>
-<td>Comma-separated label names</td>
-</tr>
-<tr>
-<td><code>per_page</code></td>
-<td>integer</td>
-<td>No</td>
-<td>Results per page, max 100 (default: 30)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="create_issue">create_issue<a class="headerlink" href="#create_issue" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>owner</code></td>
-<td>string</td>
-<td>No</td>
-<td>Repository owner</td>
-</tr>
-<tr>
-<td><code>repo</code></td>
-<td>string</td>
-<td>No</td>
-<td>Repository name</td>
-</tr>
-<tr>
-<td><code>title</code></td>
-<td>string</td>
-<td>Yes</td>
-<td>Issue title</td>
-</tr>
-<tr>
-<td><code>body</code></td>
-<td>string</td>
-<td>No</td>
-<td>Issue body (markdown)</td>
-</tr>
-<tr>
-<td><code>labels</code></td>
-<td>string</td>
-<td>No</td>
-<td>Comma-separated label names</td>
-</tr>
-<tr>
-<td><code>assignees</code></td>
-<td>string</td>
-<td>No</td>
-<td>Comma-separated assignee usernames</td>
-</tr>
-</tbody>
-</table>
-<h3 id="search_code">search_code<a class="headerlink" href="#search_code" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>query</code></td>
-<td>string</td>
-<td>Yes</td>
-<td>Search query (GitHub code search syntax)</td>
-</tr>
-<tr>
-<td><code>per_page</code></td>
-<td>integer</td>
-<td>No</td>
-<td>Results per page, max 100 (default: 30)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="example-usage">Example Usage<a class="headerlink" href="#example-usage" title="Permanent link">&para;</a></h2>
-<h3 id="direct-tool-calls-library-mode">Direct Tool Calls (Library Mode)<a class="headerlink" href="#direct-tool-calls-library-mode" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">// List open bugs</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nx">result</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">rt</span><span class="p">.</span><span class="nx">CallTool</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;list_issues&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">{</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="s">&quot;owner&quot;</span><span class="p">:</span><span class="w">  </span><span class="s">&quot;plexusone&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="s">&quot;repo&quot;</span><span class="p">:</span><span class="w">   </span><span class="s">&quot;omniskill&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="s">&quot;state&quot;</span><span class="p">:</span><span class="w">  </span><span class="s">&quot;open&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="s">&quot;labels&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;bug&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">})</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="c1">// Create an issue</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="nx">result</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">rt</span><span class="p">.</span><span class="nx">CallTool</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;create_issue&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">{</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="s">&quot;owner&quot;</span><span class="p">:</span><span class="w">  </span><span class="s">&quot;plexusone&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="s">&quot;repo&quot;</span><span class="p">:</span><span class="w">   </span><span class="s">&quot;omniskill&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="s">&quot;title&quot;</span><span class="p">:</span><span class="w">  </span><span class="s">&quot;Fix login bug&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="s">&quot;body&quot;</span><span class="p">:</span><span class="w">   </span><span class="s">&quot;Users cannot log in when...&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="s">&quot;labels&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;bug,high-priority&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="p">})</span>
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="c1">// Search code</span>
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="nx">result</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">rt</span><span class="p">.</span><span class="nx">CallTool</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;search_code&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">{</span>
-<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">    </span><span class="s">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;repo:plexusone/omniskill language:go func Init&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="p">})</span>
-</code></pre></div>
-<h3 id="with-mcp-server">With MCP Server<a class="headerlink" href="#with-mcp-server" title="Permanent link">&para;</a></h3>
-<p>When exposed via MCP, AI assistants like Claude can use the tools directly:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>User: List all open issues labeled &quot;bug&quot; in the omniskill repo
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Claude: [Uses list_issues tool with owner=&quot;plexusone&quot;, repo=&quot;omniskill&quot;, state=&quot;open&quot;, labels=&quot;bug&quot;]
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>Here are the open bug issues:
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>1. #42 - Login fails on timeout
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>2. #38 - Config parsing error
-</code></pre></div>
-<h2 id="required-permissions">Required Permissions<a class="headerlink" href="#required-permissions" title="Permanent link">&para;</a></h2>
-<p>The GitHub token needs appropriate scopes:</p>
-<table>
-<thead>
-<tr>
-<th>Scope</th>
-<th>Required For</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>repo</code></td>
-<td>Private repository access</td>
-</tr>
-<tr>
-<td><code>public_repo</code></td>
-<td>Public repository access (issues, PRs)</td>
-</tr>
-<tr>
-<td><code>read:org</code></td>
-<td>Organization repository listing</td>
-</tr>
-</tbody>
-</table>
-<p>For read-only operations on public repos, <code>public_repo</code> is sufficient.</p>
-<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<p><strong>Roles solve these problems</strong> by providing a structured, composable abstraction for agent personas.</p>
+<h2 id="what-is-a-role">What is a Role?<a class="headerlink" href="#what-is-a-role" title="Permanent link">&para;</a></h2>
+<p>A Role encapsulates:</p>
 <ul>
-<li><a href="https://docs.github.com/en/rest">GitHub REST API Documentation</a></li>
-<li><a href="https://docs.github.com/en/search-github/searching-on-github/searching-code">GitHub Code Search Syntax</a></li>
-<li><a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">Creating a Personal Access Token</a></li>
+<li><strong>Identity</strong> - A name, description, and persona (how the agent communicates)</li>
+<li><strong>Capabilities</strong> - Which skills and tools the role can use</li>
+<li><strong>Behaviors</strong> - Context-aware actions (different behavior in meetings vs chat)</li>
+<li><strong>Policies</strong> - Governance rules (what the role can and cannot do)</li>
+<li><strong>Metrics</strong> - Success measurements and KPIs</li>
+<li><strong>Workflows</strong> - Structured, repeatable processes</li>
+<li><strong>Delegation</strong> - Rules for orchestrating sub-agents</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/plexusone/omniskill/role&quot;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">type</span><span class="w"> </span><span class="nx">MeetingPMRole</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nx">role</span><span class="p">.</span><span class="nx">BaseRole</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="o">*</span><span class="nx">MeetingPMRole</span><span class="p">)</span><span class="w"> </span><span class="nx">Spec</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">role</span><span class="p">.</span><span class="nx">RoleSpec</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">role</span><span class="p">.</span><span class="nx">RoleSpec</span><span class="p">{</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="nx">ID</span><span class="p">:</span><span class="w">          </span><span class="s">&quot;meeting-pm&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="nx">Name</span><span class="p">:</span><span class="w">        </span><span class="s">&quot;Meeting Program Manager&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="nx">Description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Facilitates meetings, captures actions, publishes notes&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="nx">Purpose</span><span class="p">:</span><span class="w">     </span><span class="s">&quot;Ensure meetings are productive and outcomes are tracked&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="nx">Skills</span><span class="p">:</span><span class="w"> </span><span class="nx">role</span><span class="p">.</span><span class="nx">SkillRequirements</span><span class="p">{</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">            </span><span class="nx">Required</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="nx">role</span><span class="p">.</span><span class="nx">SkillRef</span><span class="p">{</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">                </span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;calendar&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">Purpose</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Schedule and manage meetings&quot;</span><span class="p">},</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">                </span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;confluence&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">Purpose</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Publish meeting notes&quot;</span><span class="p">},</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">            </span><span class="p">},</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="p">},</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="roles-vs-prompts">Roles vs Prompts<a class="headerlink" href="#roles-vs-prompts" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>System Prompt</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reusability</td>
+<td>Copy-paste</td>
+<td>Import and extend</td>
+</tr>
+<tr>
+<td>Versioning</td>
+<td>Manual tracking</td>
+<td>Semantic versioning</td>
+</tr>
+<tr>
+<td>Governance</td>
+<td>None</td>
+<td>Policies and enforcement</td>
+</tr>
+<tr>
+<td>Testing</td>
+<td>Ad-hoc</td>
+<td>Structured with specs</td>
+</tr>
+<tr>
+<td>Composition</td>
+<td>Append text</td>
+<td>SubRoles and delegation</td>
+</tr>
+<tr>
+<td>Observability</td>
+<td>Logs only</td>
+<td>Metrics and KPIs</td>
+</tr>
+</tbody>
+</table>
+<h2 id="subroles-specialization-without-duplication">SubRoles: Specialization Without Duplication<a class="headerlink" href="#subroles-specialization-without-duplication" title="Permanent link">&para;</a></h2>
+<p>SubRoles extend a parent role with specialized behavior. This avoids duplicating common functionality while allowing customization.</p>
+<h3 id="example-meeting-pm-with-subroles">Example: Meeting PM with SubRoles<a class="headerlink" href="#example-meeting-pm-with-subroles" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Meeting PM (parent)
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── Facilitator (subrole)
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>│   └── Focus: Keeping discussions on track, managing time
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>├── Note-Taker (subrole)
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>│   └── Focus: Capturing decisions, action items, key points
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>└── Action Tracker (subrole)
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    └── Focus: Following up on action items, sending reminders
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">type</span><span class="w"> </span><span class="nx">FacilitatorSubRole</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nx">role</span><span class="p">.</span><span class="nx">BaseRole</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="o">*</span><span class="nx">FacilitatorSubRole</span><span class="p">)</span><span class="w"> </span><span class="nx">Parent</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;meeting-pm&quot;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">}</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="o">*</span><span class="nx">FacilitatorSubRole</span><span class="p">)</span><span class="w"> </span><span class="nx">Overrides</span><span class="p">()</span><span class="w"> </span><span class="nx">role</span><span class="p">.</span><span class="nx">SubRoleOverrides</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">role</span><span class="p">.</span><span class="nx">SubRoleOverrides</span><span class="p">{</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">        </span><span class="nx">SystemPromptSuffix</span><span class="p">:</span><span class="w"> </span><span class="s">`</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="s">Focus on facilitation:</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="s">- Keep discussions focused on the agenda</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="s">- Manage speaking time fairly</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="s">- Redirect off-topic conversations</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="s">- Summarize key points before moving on</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="s">`</span><span class="p">,</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="role-composition">Role Composition<a class="headerlink" href="#role-composition" title="Permanent link">&para;</a></h2>
+<p>Roles can be composed in several ways:</p>
+<h3 id="1-skill-composition">1. Skill Composition<a class="headerlink" href="#1-skill-composition" title="Permanent link">&para;</a></h3>
+<p>Roles declare which skills they need:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">Skills</span><span class="p">:</span><span class="w"> </span><span class="nx">role</span><span class="p">.</span><span class="nx">SkillRequirements</span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nx">Required</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="nx">role</span><span class="p">.</span><span class="nx">SkillRef</span><span class="p">{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">        </span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;calendar&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">Purpose</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Manage schedules&quot;</span><span class="p">},</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">        </span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;email&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">Purpose</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Send notifications&quot;</span><span class="p">},</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nx">Optional</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="nx">role</span><span class="p">.</span><span class="nx">SkillRef</span><span class="p">{</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;slack&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">Purpose</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Post updates to channels&quot;</span><span class="p">},</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="2-subrole-inheritance">2. SubRole Inheritance<a class="headerlink" href="#2-subrole-inheritance" title="Permanent link">&para;</a></h3>
+<p>SubRoles inherit from parents and can override or extend:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">type</span><span class="w"> </span><span class="nx">SecurityReviewerSubRole</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nx">role</span><span class="p">.</span><span class="nx">BaseRole</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">}</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="o">*</span><span class="nx">SecurityReviewerSubRole</span><span class="p">)</span><span class="w"> </span><span class="nx">Parent</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;code-reviewer&quot;</span><span class="w">  </span><span class="c1">// Inherits from code-reviewer</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">}</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="o">*</span><span class="nx">SecurityReviewerSubRole</span><span class="p">)</span><span class="w"> </span><span class="nx">Overrides</span><span class="p">()</span><span class="w"> </span><span class="nx">role</span><span class="p">.</span><span class="nx">SubRoleOverrides</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">role</span><span class="p">.</span><span class="nx">SubRoleOverrides</span><span class="p">{</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">        </span><span class="nx">AdditionalSkills</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;security-scanner&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;cve-database&quot;</span><span class="p">},</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="3-delegation">3. Delegation<a class="headerlink" href="#3-delegation" title="Permanent link">&para;</a></h3>
+<p>Roles can delegate tasks to other roles:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nx">Delegation</span><span class="p">:</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">role</span><span class="p">.</span><span class="nx">DelegationConfig</span><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nx">Enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nx">Rules</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="nx">role</span><span class="p">.</span><span class="nx">DelegationRule</span><span class="p">{</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">            </span><span class="nx">Name</span><span class="p">:</span><span class="w">         </span><span class="s">&quot;Security Review&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">            </span><span class="nx">TaskPatterns</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;review:security:*&quot;</span><span class="p">},</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">            </span><span class="nx">TargetRoles</span><span class="p">:</span><span class="w">  </span><span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;security-reviewer&quot;</span><span class="p">},</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">            </span><span class="nx">Autonomous</span><span class="p">:</span><span class="w">   </span><span class="kc">false</span><span class="p">,</span><span class="w">  </span><span class="c1">// Requires user approval</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">        </span><span class="p">},</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="use-cases">Use Cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
+<h3 id="meeting-program-manager">Meeting Program Manager<a class="headerlink" href="#meeting-program-manager" title="Permanent link">&para;</a></h3>
+<p>A role that handles the entire meeting lifecycle:</p>
+<ul>
+<li><strong>Pre-meeting</strong>: Prepares agenda, sends reminders, gathers materials</li>
+<li><strong>During meeting</strong>: Takes notes, captures actions, tracks decisions</li>
+<li><strong>Post-meeting</strong>: Publishes notes, assigns actions, schedules follow-ups</li>
+</ul>
+<h3 id="code-reviewer">Code Reviewer<a class="headerlink" href="#code-reviewer" title="Permanent link">&para;</a></h3>
+<p>A role for automated code review with specialized subroles:</p>
+<ul>
+<li><strong>Architecture Reviewer</strong>: Focuses on design patterns and structure</li>
+<li><strong>Security Reviewer</strong>: Checks for vulnerabilities and compliance</li>
+<li><strong>Performance Reviewer</strong>: Identifies optimization opportunities</li>
+</ul>
+<h3 id="support-agent">Support Agent<a class="headerlink" href="#support-agent" title="Permanent link">&para;</a></h3>
+<p>A role for customer support with context-aware behaviors:</p>
+<ul>
+<li><strong>Chat context</strong>: Quick, conversational responses</li>
+<li><strong>Email context</strong>: Formal, detailed responses with ticket references</li>
+<li><strong>Escalation</strong>: Delegates complex issues to specialists</li>
+</ul>
+<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Define your role</strong> by implementing the <code>Role</code> interface or embedding <code>BaseRole</code></li>
+<li><strong>Specify required skills</strong> that the role needs to function</li>
+<li><strong>Add behaviors</strong> for context-specific actions</li>
+<li><strong>Define policies</strong> for governance and safety</li>
+<li><strong>Create subroles</strong> for specialized variants</li>
+</ol>
+<p>See the following pages for detailed documentation:</p>
+<ul>
+<li><a href="interface/">Role Interface</a> - Core interfaces and base types</li>
+<li><a href="spec/">Specifications</a> - RoleSpec and related types</li>
+<li><a href="behaviors/">Behaviors</a> - Context-aware actions</li>
+<li><a href="policies/">Policies</a> - Governance rules</li>
+<li><a href="delegation/">Delegation</a> - Sub-agent orchestration</li>
+<li><a href="workflows/">Workflows</a> - Structured processes</li>
+<li><a href="metrics/">Metrics</a> - Success measurements</li>
 </ul>
 
 
