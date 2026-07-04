@@ -193,6 +193,14 @@ rt.RegisterSkill(mathSkill)  // Also registers with reg
 ```
 github.com/plexusone/omniskill
 ├── skill/       # Core Skill and Tool interfaces, CommandTool
+├── role/        # Role interfaces and specification types
+│   ├── role.go        # Role interface, BaseRole, optional interfaces
+│   ├── spec.go        # RoleSpec, Responsibility, SkillRequirements
+│   ├── behavior.go    # Behavior, BehaviorContext, BehaviorTrigger
+│   ├── policy.go      # Policy, PolicyRule, PolicyEnforcement
+│   ├── metric.go      # MetricDefinition, MetricType, MetricTarget
+│   ├── delegation.go  # DelegationConfig, DelegationRule
+│   └── workflow.go    # Workflow interface, WorkflowResult, Artifact
 ├── loader/      # Skill loaders for SKILL.md and Go formats
 ├── installer/   # Dependency management for skills
 ├── clawhub/     # ClawHub marketplace integration
@@ -215,6 +223,53 @@ github.com/plexusone/omniskill
 │   └── oauth2/  # OAuth 2.1 authorization server
 └── doc.go
 ```
+
+## Roles
+
+The `role/` package defines interfaces for high-level agent personas that compose skills and define behavior. Roles separate organizational responsibilities from runtime implementations.
+
+### Role Interface
+
+```go
+import "github.com/plexusone/omniskill/role"
+
+type MyRole struct {
+    role.BaseRole
+}
+
+func (r *MyRole) Spec() *role.RoleSpec {
+    return &role.RoleSpec{
+        ID:          "my-role",
+        Name:        "My Role",
+        Description: "Does something useful",
+        Skills: role.SkillRequirements{
+            Required: []role.SkillRef{
+                {Name: "skill-a", Purpose: "For doing A"},
+            },
+        },
+        Behaviors: []role.Behavior{
+            // Context-aware behaviors
+        },
+        Metrics: []role.MetricDefinition{
+            role.NewCounterMetric("tasks-completed", "Tasks Completed", ""),
+        },
+    }
+}
+```
+
+### Optional Interfaces
+
+Roles can implement additional interfaces for enhanced capabilities:
+
+| Interface | Purpose |
+|-----------|---------|
+| `SkillRequirer` | Roles with optional skills |
+| `BehaviorProvider` | Context-aware behaviors (meeting, chat, autonomous) |
+| `MetricsProvider` | KPIs and success metrics |
+| `DelegationProvider` | Sub-agent orchestration |
+| `PolicyProvider` | Governance rules |
+
+See [Role Interface Reference](docs/role-interface.md) for complete documentation.
 
 ## Voice Tools
 
