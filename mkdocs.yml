@@ -61,7 +61,15 @@ nav:
       - Server: mcp/server.md
       - Client: mcp/client.md
       - OAuth2: mcp/oauth2.md
-  - Roles: role-interface.md
+  - Roles:
+      - Overview: roles/index.md
+      - Role Interface: roles/interface.md
+      - Specifications: roles/spec.md
+      - Behaviors: roles/behaviors.md
+      - Policies: roles/policies.md
+      - Delegation: roles/delegation.md
+      - Workflows: roles/workflows.md
+      - Metrics: roles/metrics.md
   - Voice Tools: voicetools/index.md
   - GitHub: github/index.md
   - Specs:

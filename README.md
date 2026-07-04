@@ -27,11 +27,13 @@ Unified skill infrastructure for AI agents in Go.
 OmniSkill provides a common interface for defining, registering, and invoking AI agent capabilities across multiple execution environments:
 
 - **skill/** - Core Skill and Tool interfaces, CommandTool for CLI wrapping
+- **role/** - Role interfaces for agent personas with behaviors, policies, and delegation
 - **loader/** - Skill loaders for SKILL.md markdown and Go formats
 - **installer/** - Dependency management for skill requirements
 - **clawhub/** - ClawHub marketplace integration for skill discovery
 - **pack/** - Skill pack interface for embedding markdown skills
 - **registry/** - Skill registration and discovery
+- **github/** - GitHub skill for issues, PRs, and code search
 - **mcp/server/** - MCP server runtime with tools, prompts, resources
 - **mcp/client/** - MCP client for connecting to remote servers
 - **mcp/oauth2/** - OAuth 2.1 Authorization Server for authenticated MCP
