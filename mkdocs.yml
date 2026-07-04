@@ -61,7 +61,9 @@ nav:
       - Server: mcp/server.md
       - Client: mcp/client.md
       - OAuth2: mcp/oauth2.md
+  - Roles: role-interface.md
   - Voice Tools: voicetools/index.md
+  - GitHub: github/index.md
   - Specs:
       - Voice Parity: specs/features/voice-parity/PLAN.md
   - API Reference: api/index.md

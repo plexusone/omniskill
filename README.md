@@ -201,6 +201,7 @@ github.com/plexusone/omniskill
 │   ├── metric.go      # MetricDefinition, MetricType, MetricTarget
 │   ├── delegation.go  # DelegationConfig, DelegationRule
 │   └── workflow.go    # Workflow interface, WorkflowResult, Artifact
+├── github/      # GitHub skill (issues, PRs, code search)
 ├── loader/      # Skill loaders for SKILL.md and Go formats
 ├── installer/   # Dependency management for skills
 ├── clawhub/     # ClawHub marketplace integration
@@ -299,6 +300,44 @@ rt.RegisterSkill(voiceSkill)
 | `unhold_call` | Resume call from hold |
 | `consult_agent` | Query specialist AI without transferring |
 | `add_to_conference` | Add participants to conference call |
+
+## GitHub
+
+The `github/` package provides a GitHub skill for AI agents to interact with GitHub repositories:
+
+```go
+import (
+    "github.com/plexusone/omniskill/github"
+)
+
+// Create GitHub skill with token
+ghSkill := github.New(github.Config{
+    Token: os.Getenv("GITHUB_TOKEN"),
+})
+
+// Initialize and register with MCP server
+if err := ghSkill.Init(ctx); err != nil {
+    log.Fatal(err)
+}
+defer ghSkill.Close()
+
+rt.RegisterSkill(ghSkill)
+```
+
+### Available Tools
+
+| Tool | Description |
+|------|-------------|
+| `list_issues` | List issues in a repository with filters |
+| `get_issue` | Get details of a specific issue |
+| `create_issue` | Create a new issue |
+| `update_issue` | Update an existing issue |
+| `add_issue_comment` | Add a comment to an issue |
+| `list_pull_requests` | List pull requests in a repository |
+| `get_pull_request` | Get details of a specific pull request |
+| `add_pull_request_comment` | Add a comment to a pull request |
+| `search_code` | Search for code across repositories |
+| `search_issues` | Search issues and pull requests |
 
 ## Documentation
 
