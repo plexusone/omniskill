@@ -15,8 +15,8 @@
  [go-sast-url]: https://github.com/plexusone/omniskill/actions/workflows/go-sast-codeql.yaml
  [docs-godoc-svg]: https://pkg.go.dev/badge/github.com/plexusone/omniskill
  [docs-godoc-url]: https://pkg.go.dev/github.com/plexusone/omniskill
- [docs-mkdoc-svg]: https://img.shields.io/badge/docs-guide-blue.svg
- [docs-mkdoc-url]: https://plexusone.dev/omniskill
+ [docs-mkdoc-svg]: https://img.shields.io/badge/Go-dev%20guide-blue.svg
+ [docs-mkdoc-url]: https://plexusone.dev/omniagent
  [license-svg]: https://img.shields.io/badge/license-MIT-blue.svg
  [license-url]: https://github.com/plexusone/omniskill/blob/main/LICENSE
 
