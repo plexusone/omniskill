@@ -7,6 +7,43 @@
   "maintainers": ["plexusone"],
   "releases": [
     {
+      "version": "v0.10.0",
+      "date": "2026-07-05",
+      "highlights": [
+        { "description": "New `role/` package for AI agent role definitions with behaviors, policies, and metrics" },
+        { "description": "GitHub skill moved to separate `omniskill-github` repository for lighter dependency footprint" }
+      ],
+      "added": [
+        { "description": "`role.Role` interface with `Spec()` method for declarative role introspection", "commit": "d32933d" },
+        { "description": "`role.RoleSpec` schema defining responsibilities, behaviors, policies, metrics, and delegation", "commit": "d32933d" },
+        { "description": "`role.Behavior` types for context-aware actions (meeting, chat, autonomous contexts)", "commit": "d32933d" },
+        { "description": "`role.Policy` types for governance rules with enforcement modes (strict, warn, advisory)", "commit": "d32933d" },
+        { "description": "`role.Metric` types for KPIs and success tracking with targets and thresholds", "commit": "d32933d" },
+        { "description": "`role.Delegation` types for sub-agent orchestration patterns", "commit": "d32933d" },
+        { "description": "`role.Workflow` interface for multi-step structured processes", "commit": "d32933d" },
+        { "description": "`role.BaseRole` helper struct for simple role implementations", "commit": "d32933d" },
+        { "description": "`role.SkillRequirer` optional interface for declaring required and optional skills", "commit": "d32933d" },
+        { "description": "`role.BehaviorProvider` optional interface for context-specific behaviors", "commit": "d32933d" },
+        { "description": "`role.MetricsProvider` optional interface for role success metrics", "commit": "d32933d" },
+        { "description": "`role.DelegationProvider` optional interface for sub-agent delegation rules", "commit": "d32933d" },
+        { "description": "`role.PolicyProvider` optional interface for governance policies", "commit": "d32933d" }
+      ],
+      "refactored": [
+        { "description": "GitHub skill moved to `github.com/plexusone/omniskill-github` repository to remove thick go-github SDK dependency from omniskill core", "commit": "7dba31b" }
+      ],
+      "documentation": [
+        { "description": "Comprehensive role system documentation with 8 guides covering interface, specs, behaviors, policies, delegation, workflows, and metrics", "commit": "b5a2841" },
+        { "description": "GitHub skill usage documentation with integration examples and tools reference", "commit": "87f41bb" },
+        { "description": "Role interface reference with complete API documentation", "commit": "7dcb1e7" },
+        { "description": "README updated with role package structure and usage", "commit": "11688e0" },
+        { "description": "Superseded notices added to pre-omniskill releases (v0.1.0-v0.4.0)", "commit": "bd61dd0" },
+        { "description": "MkDocs site updated for v0.9.0 packages", "commit": "4e096bc" }
+      ],
+      "dependencies": [
+        { "description": "Bump github.com/google/go-github to v88.0.0 with functional options pattern", "commit": "dec58af" }
+      ]
+    },
+    {
       "version": "v0.9.0",
       "date": "2026-06-20",
       "highlights": [
