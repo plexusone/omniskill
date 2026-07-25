@@ -145,6 +145,30 @@ func parameterToSchema(p skill.Parameter) map[string]any {
 		schema["default"] = p.Default
 	}
 
+	if p.Format != "" {
+		schema["format"] = p.Format
+	}
+
+	if p.Pattern != "" {
+		schema["pattern"] = p.Pattern
+	}
+
+	if p.MinLength != nil {
+		schema["minLength"] = *p.MinLength
+	}
+
+	if p.MaxLength != nil {
+		schema["maxLength"] = *p.MaxLength
+	}
+
+	if p.Minimum != nil {
+		schema["minimum"] = *p.Minimum
+	}
+
+	if p.Maximum != nil {
+		schema["maximum"] = *p.Maximum
+	}
+
 	if p.Items != nil {
 		schema["items"] = parameterToSchema(*p.Items)
 	}

@@ -74,6 +74,24 @@ type Parameter struct {
 
 	// Properties describes object properties (when Type is "object").
 	Properties map[string]Parameter `json:"properties,omitempty"`
+
+	// Format specifies the semantic format (e.g., "date-time", "email", "uri").
+	Format string `json:"format,omitempty"`
+
+	// Pattern is a regex pattern for string validation.
+	Pattern string `json:"pattern,omitempty"`
+
+	// MinLength is the minimum string length.
+	MinLength *int `json:"minLength,omitempty"`
+
+	// MaxLength is the maximum string length.
+	MaxLength *int `json:"maxLength,omitempty"`
+
+	// Minimum is the minimum numeric value.
+	Minimum *float64 `json:"minimum,omitempty"`
+
+	// Maximum is the maximum numeric value.
+	Maximum *float64 `json:"maximum,omitempty"`
 }
 
 // ToolFunc is a function type that can be used as a tool handler.
@@ -167,6 +185,30 @@ func ParameterToSchema(p Parameter) map[string]any {
 
 	if len(p.Enum) > 0 {
 		schema["enum"] = p.Enum
+	}
+
+	if p.Format != "" {
+		schema["format"] = p.Format
+	}
+
+	if p.Pattern != "" {
+		schema["pattern"] = p.Pattern
+	}
+
+	if p.MinLength != nil {
+		schema["minLength"] = *p.MinLength
+	}
+
+	if p.MaxLength != nil {
+		schema["maxLength"] = *p.MaxLength
+	}
+
+	if p.Minimum != nil {
+		schema["minimum"] = *p.Minimum
+	}
+
+	if p.Maximum != nil {
+		schema["maximum"] = *p.Maximum
 	}
 
 	if p.Items != nil {
