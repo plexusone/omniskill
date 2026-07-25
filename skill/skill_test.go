@@ -214,6 +214,7 @@ func TestParameterWithArrayItems(t *testing.T) {
 type customSkill struct {
 	name        string
 	description string
+	version     string
 	tools       []Tool
 	initCalled  bool
 	closeCalled bool
@@ -223,6 +224,7 @@ type customSkill struct {
 
 func (s *customSkill) Name() string                   { return s.name }
 func (s *customSkill) Description() string            { return s.description }
+func (s *customSkill) Version() string                { return s.version }
 func (s *customSkill) Tools() []Tool                  { return s.tools }
 func (s *customSkill) Init(ctx context.Context) error { s.initCalled = true; return s.initErr }
 func (s *customSkill) Close() error                   { s.closeCalled = true; return s.closeErr }

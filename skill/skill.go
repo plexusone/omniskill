@@ -40,6 +40,10 @@ type Skill interface {
 	// Description returns a human-readable description of what the skill does.
 	Description() string
 
+	// Version returns the skill version (e.g., "1.0.0", "0.2.1").
+	// Use semantic versioning. Return "" if unversioned.
+	Version() string
+
 	// Tools returns the tools provided by this skill.
 	// This may be called multiple times and should return consistent results
 	// after Init() completes.
@@ -60,6 +64,7 @@ type Skill interface {
 type BaseSkill struct {
 	SkillName        string
 	SkillDescription string
+	SkillVersion     string
 	SkillTools       []Tool
 }
 
@@ -71,6 +76,11 @@ func (s *BaseSkill) Name() string {
 // Description returns the skill description.
 func (s *BaseSkill) Description() string {
 	return s.SkillDescription
+}
+
+// Version returns the skill version.
+func (s *BaseSkill) Version() string {
+	return s.SkillVersion
 }
 
 // Tools returns the skill's tools.
