@@ -26,9 +26,35 @@ package role
 
 import (
 	"context"
+	"errors"
+	"fmt"
+	"strings"
 
 	"github.com/plexusone/omniskill/skill"
 )
+
+// ErrMissingSkill is returned when a role's required skill is not provided during Init.
+// Use errors.As to extract the MissingSkillError for details.
+var ErrMissingSkill = errors.New("missing required skill")
+
+// MissingSkillError provides details about which skills are missing.
+type MissingSkillError struct {
+	// RoleName is the name of the role that is missing skills.
+	RoleName string
+
+	// Missing lists the names of skills that were not provided.
+	Missing []string
+}
+
+// Error implements the error interface.
+func (e *MissingSkillError) Error() string {
+	return fmt.Sprintf("role %q missing required skills: %s", e.RoleName, strings.Join(e.Missing, ", "))
+}
+
+// Unwrap returns ErrMissingSkill for errors.Is compatibility.
+func (e *MissingSkillError) Unwrap() error {
+	return ErrMissingSkill
+}
 
 // Role represents a high-level agent persona that composes skills.
 //
@@ -173,8 +199,21 @@ func (r *BaseRole) SystemPrompt(ctx context.Context) (string, error) {
 	return r.RolePrompt, nil
 }
 
-// Init stores the provided skills for later use.
+// Init validates that all required skills are provided and stores them.
+// Returns MissingSkillError if any required skills are not in the map.
 func (r *BaseRole) Init(ctx context.Context, skills map[string]skill.Skill) error {
+	var missing []string
+	for _, name := range r.RoleSkills {
+		if _, ok := skills[name]; !ok {
+			missing = append(missing, name)
+		}
+	}
+	if len(missing) > 0 {
+		return &MissingSkillError{
+			RoleName: r.RoleName,
+			Missing:  missing,
+		}
+	}
 	r.Skills = skills
 	return nil
 }
@@ -215,3 +254,22 @@ func (r *BaseRole) Workflows() []Workflow {
 // Ensure BaseRole implements Role and optional interfaces.
 var _ Role = (*BaseRole)(nil)
 var _ SkillRequirer = (*BaseRole)(nil)
+
+// ValidateSkills checks that all required skills are present in the map.
+// Returns MissingSkillError if any are missing.
+// This is a standalone validation function for use before calling Init.
+func ValidateSkills(r Role, skills map[string]skill.Skill) error {
+	var missing []string
+	for _, name := range r.RequiredSkills() {
+		if _, ok := skills[name]; !ok {
+			missing = append(missing, name)
+		}
+	}
+	if len(missing) > 0 {
+		return &MissingSkillError{
+			RoleName: r.Name(),
+			Missing:  missing,
+		}
+	}
+	return nil
+}

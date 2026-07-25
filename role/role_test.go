@@ -6,6 +6,8 @@ package role
 
 import (
 	"context"
+	"errors"
+	"strings"
 	"testing"
 
 	"github.com/plexusone/omniskill/skill"
@@ -71,6 +73,82 @@ func TestBaseRoleInit(t *testing.T) {
 
 	if r.Skills["mock"] != mockSkill {
 		t.Error("Skills[\"mock\"] should be the mock skill")
+	}
+}
+
+func TestBaseRoleInitMissingSkills(t *testing.T) {
+	r := &BaseRole{
+		RoleName:   "test-role",
+		RoleSkills: []string{"skill1", "skill2", "skill3"},
+	}
+
+	// Only provide skill1
+	skills := map[string]skill.Skill{
+		"skill1": &skill.BaseSkill{SkillName: "skill1"},
+	}
+
+	err := r.Init(context.Background(), skills)
+	if err == nil {
+		t.Fatal("Init() should return error for missing skills")
+	}
+
+	// Check that it's a MissingSkillError
+	var msErr *MissingSkillError
+	if !errors.As(err, &msErr) {
+		t.Fatalf("error should be MissingSkillError, got %T", err)
+	}
+
+	if msErr.RoleName != "test-role" {
+		t.Errorf("RoleName = %q, want %q", msErr.RoleName, "test-role")
+	}
+
+	if len(msErr.Missing) != 2 {
+		t.Errorf("Missing len = %d, want 2", len(msErr.Missing))
+	}
+
+	// Check errors.Is works
+	if !errors.Is(err, ErrMissingSkill) {
+		t.Error("errors.Is(err, ErrMissingSkill) should be true")
+	}
+
+	// Check error message is actionable
+	errMsg := err.Error()
+	if !strings.Contains(errMsg, "skill2") || !strings.Contains(errMsg, "skill3") {
+		t.Errorf("error message should list missing skills: %s", errMsg)
+	}
+}
+
+func TestValidateSkills(t *testing.T) {
+	r := &BaseRole{
+		RoleName:   "validator-test",
+		RoleSkills: []string{"required1", "required2"},
+	}
+
+	// Test with all skills present
+	allSkills := map[string]skill.Skill{
+		"required1": &skill.BaseSkill{SkillName: "required1"},
+		"required2": &skill.BaseSkill{SkillName: "required2"},
+		"extra":     &skill.BaseSkill{SkillName: "extra"},
+	}
+	if err := ValidateSkills(r, allSkills); err != nil {
+		t.Errorf("ValidateSkills() with all skills should not error: %v", err)
+	}
+
+	// Test with missing skill
+	partial := map[string]skill.Skill{
+		"required1": &skill.BaseSkill{SkillName: "required1"},
+	}
+	err := ValidateSkills(r, partial)
+	if err == nil {
+		t.Fatal("ValidateSkills() should error for missing skills")
+	}
+
+	var msErr *MissingSkillError
+	if !errors.As(err, &msErr) {
+		t.Fatalf("error should be MissingSkillError, got %T", err)
+	}
+	if len(msErr.Missing) != 1 || msErr.Missing[0] != "required2" {
+		t.Errorf("Missing = %v, want [required2]", msErr.Missing)
 	}
 }
 
