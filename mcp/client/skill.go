@@ -76,6 +76,11 @@ func (s *SessionSkill) Description() string {
 	return s.description
 }
 
+// Version returns the skill version (empty for MCP session skills).
+func (s *SessionSkill) Version() string {
+	return ""
+}
+
 // Tools returns all tools from the MCP session.
 //
 // If Init() has not been called, this will call Init() with

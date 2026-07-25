@@ -109,6 +109,11 @@ func (s *MarkdownSkill) Description() string {
 	return s.Metadata.Description
 }
 
+// Version returns the skill version (empty for markdown skills).
+func (s *MarkdownSkill) Version() string {
+	return ""
+}
+
 // Tools returns the tools discovered from the skill.
 func (s *MarkdownSkill) Tools() []skill.Tool {
 	return s.tools
