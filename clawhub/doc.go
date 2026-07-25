@@ -90,8 +90,10 @@
 // To publish a skill to ClawHub:
 //
 //  1. Create a CLAWHUB.json manifest
+//
 //  2. Run security scanning
+//
 //  3. Push to the ClawHub registry
 //
-//	err := hub.Publish(ctx, manifest, "./skill")
+//     err := hub.Publish(ctx, manifest, "./skill")
 package clawhub
