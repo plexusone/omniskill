@@ -52,6 +52,10 @@ type Role interface {
 	// Description returns a human-readable description of the role.
 	Description() string
 
+	// Version returns the role version (e.g., "1.0.0", "0.2.1").
+	// Use semantic versioning. Return "" if unversioned.
+	Version() string
+
 	// Spec returns the complete role specification.
 	// This includes all metadata, behaviors, policies, and metrics.
 	Spec() *RoleSpec
@@ -139,6 +143,7 @@ type SubRoleOverrides struct {
 type BaseRole struct {
 	RoleName           string
 	RoleDescription    string
+	RoleVersion        string
 	RolePrompt         string
 	RoleSkills         []string
 	RoleOptionalSkills []string
@@ -156,6 +161,11 @@ func (r *BaseRole) Name() string {
 // Description returns the role description.
 func (r *BaseRole) Description() string {
 	return r.RoleDescription
+}
+
+// Version returns the role version.
+func (r *BaseRole) Version() string {
+	return r.RoleVersion
 }
 
 // SystemPrompt returns the role's system prompt.
