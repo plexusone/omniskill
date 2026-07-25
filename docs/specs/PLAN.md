@@ -17,7 +17,7 @@ The core library is built and in production use (aha-studio's MCP server with 40
 | installer/ (GitHub, ClawHub sources) | Built | Tested |
 | clawhub/ (Hub, manifest, resolver, security) | Built | Marketplace still maturing |
 | voicetools/ (transfer, hold, consult, conference) | Built | Tested |
-| features/voice-parity | In progress | See `features/voice-parity/PLAN.md` |
+| features/voice-parity | Complete | All 3 phases delivered; see `features/voice-parity/PLAN.md` |
 
 ## Phase 1: Interface Hardening
 
