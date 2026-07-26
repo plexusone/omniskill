@@ -2,7 +2,7 @@
 
 **Initiative:** `INIT-OMNISKILL-001`
 **Repository:** `github.com/plexusone/omniskill`
-**Status:** Executing — 4 of 5 phases completed (Phases 2 and 5 in progress)
+**Status:** Complete — 5 of 5 phases completed
 
 > RMI IDs are stable and permanent. Commits implementing an item carry the trailer `Refs: RMI-OMNISKILL-NNN`. Phase status is derived from member RMIs — a phase is complete only when all its required RMIs are complete. Execution detail lives in [PLAN.md](PLAN.md); feature-level plans live under `features/` (e.g., `features/voice-parity/PLAN.md`).
 
@@ -23,13 +23,13 @@
 ## Phase 2 — Role Adoption
 
 **Theme:** Move roles from defined-but-lightly-used to a first-class agent building block.
-**Status:** In Progress — 2 of 3 items completed
+**Status:** Complete — 3 of 3 items completed
 
 - [x] `RMI-OMNISKILL-006` Ship 2-3 reference roles (e.g., code-reviewer, meeting-pm) exercising behaviors, policies, and workflows end to end
   - Depends on: `RMI-OMNISKILL-001`
-- [ ] `RMI-OMNISKILL-007` Wire delegation (`DelegationConfig`, budgets, retry policies) into omniagent execution
+- [x] `RMI-OMNISKILL-007` Wire delegation (`DelegationConfig`, budgets, retry policies) into omniagent execution
   - Depends on: `RMI-OMNISKILL-006`
-  - Cross-repo: requires changes in `github.com/plexusone/omniagent`
+  - Cross-repo: DelegationExecutor added to `github.com/plexusone/omniagent/agent/roles`
 - [x] `RMI-OMNISKILL-008` Role validation: required-skill resolution errors at Init with actionable messages
   - Depends on: `RMI-OMNISKILL-001`
 
@@ -63,16 +63,16 @@
 ## Phase 5 — Ecosystem Integration
 
 **Theme:** OmniSkill as the standard capability layer across PlexusOne.
-**Status:** In Progress — 3 of 4 items completed
+**Status:** Complete — 4 of 4 items completed
 
 - [x] `RMI-OMNISKILL-018` Migrate remaining PlexusOne agent projects with bespoke tool layers onto omniskill
   - Depends on: `RMI-OMNISKILL-004`
   - Delivered: migration guide (`docs/migration/`) and adapter utilities (`migration/` package)
 - [x] `RMI-OMNISKILL-019` `mcp/client` bridging recipes: mount a remote MCP server into a local registry
   - Delivered: `mcp/bridge/` package with Bridge, RemoteTool, auto-refresh
-- [ ] `RMI-OMNISKILL-020` Cross-repo examples with aha-studio and omniagent kept compile-tested
+- [x] `RMI-OMNISKILL-020` Cross-repo examples with aha-studio and omniagent kept compile-tested
   - Depends on: `RMI-OMNISKILL-007`
-  - Blocked: requires omniagent delegation wiring
+  - Note: omniagent delegation wired; compile-test examples available in respective repos
 - [x] `RMI-OMNISKILL-021` Runtime skill discovery: agents query registry/ClawHub for capabilities by need, not by name
   - Depends on: `RMI-OMNISKILL-012`
   - Delivered: DiscoveryRegistry, Capability constants, ClawHub discover/recommend
