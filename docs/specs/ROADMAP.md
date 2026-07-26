@@ -2,34 +2,35 @@
 
 **Initiative:** `INIT-OMNISKILL-001`
 **Repository:** `github.com/plexusone/omniskill`
-**Status:** Planned — 0 of 5 phases completed
+**Status:** Executing — 1 of 5 phases completed, Phase 2 in progress
 
 > RMI IDs are stable and permanent. Commits implementing an item carry the trailer `Refs: RMI-OMNISKILL-NNN`. Phase status is derived from member RMIs — a phase is complete only when all its required RMIs are complete. Execution detail lives in [PLAN.md](PLAN.md); feature-level plans live under `features/` (e.g., `features/voice-parity/PLAN.md`).
 
 ## Phase 1 — Interface Hardening
 
 **Theme:** Stabilize the public contract before wider ecosystem adoption.
-**Status:** Not started — 0 of 5 items completed
+**Status:** Complete — 5 of 5 items completed
 
-- [ ] `RMI-OMNISKILL-001` Interface gap review of `skill.Skill`, `skill.Tool`, and `role.Role` from aha-studio and omniagent usage
+- [x] `RMI-OMNISKILL-001` Interface gap review of `skill.Skill`, `skill.Tool`, and `role.Role` from aha-studio and omniagent usage
   - Acceptance: gaps resolved or explicitly deferred with rationale; interfaces declared stable for pre-1.0
-- [ ] `RMI-OMNISKILL-002` Document tool parameter semantics (enum, default, nested objects) aligned with SDK JSON Schema generation
-- [ ] `RMI-OMNISKILL-003` Package-level doc.go for role/, loader/, pack/, installer/, clawhub/ matching root doc.go quality
-- [ ] `RMI-OMNISKILL-004` Deprecation policy for pre-1.0 interface changes
+- [x] `RMI-OMNISKILL-002` Document tool parameter semantics (enum, default, nested objects) aligned with SDK JSON Schema generation
+- [x] `RMI-OMNISKILL-003` Package-level doc.go for role/, loader/, pack/, installer/, clawhub/ matching root doc.go quality
+- [x] `RMI-OMNISKILL-004` Deprecation policy for pre-1.0 interface changes
   - Depends on: `RMI-OMNISKILL-001`
-- [ ] `RMI-OMNISKILL-005` Voice-parity close-out: verify all modules against the parity checklist and reconcile status docs
+- [x] `RMI-OMNISKILL-005` Voice-parity close-out: verify all modules against the parity checklist and reconcile status docs
   - Acceptance: `features/voice-parity/PLAN.md` status and PLAN.md current-state table agree; residual gaps become new RMIs
 
 ## Phase 2 — Role Adoption
 
 **Theme:** Move roles from defined-but-lightly-used to a first-class agent building block.
-**Status:** Not started — 0 of 3 items completed
+**Status:** In Progress — 2 of 3 items completed
 
-- [ ] `RMI-OMNISKILL-006` Ship 2-3 reference roles (e.g., code-reviewer, meeting-pm) exercising behaviors, policies, and workflows end to end
+- [x] `RMI-OMNISKILL-006` Ship 2-3 reference roles (e.g., code-reviewer, meeting-pm) exercising behaviors, policies, and workflows end to end
   - Depends on: `RMI-OMNISKILL-001`
 - [ ] `RMI-OMNISKILL-007` Wire delegation (`DelegationConfig`, budgets, retry policies) into omniagent execution
   - Depends on: `RMI-OMNISKILL-006`
-- [ ] `RMI-OMNISKILL-008` Role validation: required-skill resolution errors at Init with actionable messages
+  - Cross-repo: requires changes in `github.com/plexusone/omniagent`
+- [x] `RMI-OMNISKILL-008` Role validation: required-skill resolution errors at Init with actionable messages
   - Depends on: `RMI-OMNISKILL-001`
 
 ## Phase 3 — Pack and Distribution Tooling
