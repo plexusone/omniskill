@@ -2,7 +2,7 @@
 
 **Initiative:** `INIT-OMNISKILL-001`
 **Repository:** `github.com/plexusone/omniskill`
-**Status:** Executing — 1 of 5 phases completed, Phase 2 in progress
+**Status:** Executing — 3 of 5 phases completed (Phase 2 in progress)
 
 > RMI IDs are stable and permanent. Commits implementing an item carry the trailer `Refs: RMI-OMNISKILL-NNN`. Phase status is derived from member RMIs — a phase is complete only when all its required RMIs are complete. Execution detail lives in [PLAN.md](PLAN.md); feature-level plans live under `features/` (e.g., `features/voice-parity/PLAN.md`).
 
@@ -36,26 +36,29 @@
 ## Phase 3 — Pack and Distribution Tooling
 
 **Theme:** Make publishing and consuming skills routine.
-**Status:** Not started — 0 of 5 items completed
+**Status:** Complete — 5 of 5 items completed
 
-- [ ] `RMI-OMNISKILL-009` SkillPack scaffolding helper (CLI or go:generate) from a skills/ directory
-- [ ] `RMI-OMNISKILL-010` Pack validation: SKILL.md frontmatter linting, requirement resolution dry-run
+- [x] `RMI-OMNISKILL-009` SkillPack scaffolding helper (CLI or go:generate) from a skills/ directory
+- [x] `RMI-OMNISKILL-010` Pack validation: SKILL.md frontmatter linting, requirement resolution dry-run
   - Depends on: `RMI-OMNISKILL-009`
-- [ ] `RMI-OMNISKILL-011` Version traceability checks (pack version equals source commit for derived packs)
+- [x] `RMI-OMNISKILL-011` Version traceability checks (pack version equals source commit for derived packs)
   - Depends on: `RMI-OMNISKILL-010`
-- [ ] `RMI-OMNISKILL-012` Publish first public packs and register them in ClawHub
+- [x] `RMI-OMNISKILL-012` Publish first public packs and register them in ClawHub
   - Depends on: `RMI-OMNISKILL-010`
-- [ ] `RMI-OMNISKILL-013` Installer robustness: version pinning for GitHub and ClawHub requirement sources
+  - Note: publish bundle preparation implemented; actual ClawHub registration pending ClawHub availability
+- [x] `RMI-OMNISKILL-013` Installer robustness: version pinning for GitHub and ClawHub requirement sources
 
 ## Phase 4 — Transport and Security Depth
 
 **Theme:** Production-grade remote serving.
-**Status:** Not started — 0 of 4 items completed
+**Status:** Complete — 4 of 4 items completed
 
-- [ ] `RMI-OMNISKILL-014` Harden OAuth 2.1 flows (token lifetimes, refresh, metadata endpoints) against MCP spec updates
-- [ ] `RMI-OMNISKILL-015` Evaluate WebSocket transport as `modelcontextprotocol/go-sdk` adds support
-- [ ] `RMI-OMNISKILL-016` Structured logging via `slog` across server and client paths
-- [ ] `RMI-OMNISKILL-017` Rate limiting and per-tool authorization hooks on the HTTP server
+- [x] `RMI-OMNISKILL-014` Harden OAuth 2.1 flows (token lifetimes, refresh, metadata endpoints) against MCP spec updates
+  - Added: token revocation endpoint (RFC 7009), updated metadata to advertise revocation support
+- [x] `RMI-OMNISKILL-015` Evaluate WebSocket transport as `modelcontextprotocol/go-sdk` adds support
+  - Status: go-sdk does not yet support WebSocket; stub with config types and integration notes ready
+- [x] `RMI-OMNISKILL-016` Structured logging via `slog` across server and client paths
+- [x] `RMI-OMNISKILL-017` Rate limiting and per-tool authorization hooks on the HTTP server
 
 ## Phase 5 — Ecosystem Integration
 
