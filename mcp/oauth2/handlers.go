@@ -647,6 +647,106 @@ func (s *Server) handleRefreshTokenGrant(w http.ResponseWriter, req *TokenReques
 	_ = json.NewEncoder(w).Encode(resp) //nolint:gosec // G117: OAuth token response contains access_token by spec
 }
 
+// revocationHandler handles token revocation (RFC 7009).
+func (s *Server) revocationHandler() http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS")
+		w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
+
+		if r.Method == http.MethodOptions {
+			w.WriteHeader(http.StatusNoContent)
+			return
+		}
+
+		if r.Method != http.MethodPost {
+			writeOAuthError(w, http.StatusMethodNotAllowed, ErrorInvalidRequest, "Method not allowed")
+			return
+		}
+
+		// Parse form data
+		if err := r.ParseForm(); err != nil {
+			writeOAuthError(w, http.StatusBadRequest, ErrorInvalidRequest, "Failed to parse request")
+			return
+		}
+
+		token := r.Form.Get("token")
+		if token == "" {
+			writeOAuthError(w, http.StatusBadRequest, ErrorInvalidRequest, "token parameter is required")
+			return
+		}
+
+		tokenTypeHint := r.Form.Get("token_type_hint")
+
+		// Authenticate the client (optional for public clients)
+		clientID, clientSecret, ok := r.BasicAuth()
+		if !ok {
+			clientID = r.Form.Get("client_id")
+			clientSecret = r.Form.Get("client_secret")
+		}
+
+		// If client credentials provided, validate them
+		if clientID != "" {
+			client, err := s.storage.GetClient(clientID)
+			if err != nil || client.ClientSecret != clientSecret {
+				s.logDebugCtx(r.Context(), "revocation: invalid client credentials",
+					"client_id", clientID)
+				writeOAuthError(w, http.StatusUnauthorized, ErrorInvalidClient, "Invalid client credentials")
+				return
+			}
+		}
+
+		// Try to revoke the token
+		revoked := false
+
+		// Try as access token first (or if hinted)
+		if tokenTypeHint == "" || tokenTypeHint == "access_token" {
+			tokenInfo, err := s.storage.GetToken(token)
+			if err == nil {
+				// Verify client owns this token (if client authenticated)
+				if clientID != "" && tokenInfo.ClientID != clientID {
+					s.logDebugCtx(r.Context(), "revocation: token belongs to different client",
+						"client_id", clientID,
+						"token_client_id", tokenInfo.ClientID)
+					// Per RFC 7009, we return success even if we don't revoke
+					w.WriteHeader(http.StatusOK)
+					return
+				}
+				if err := s.storage.DeleteToken(token); err == nil {
+					revoked = true
+					s.logDebugCtx(r.Context(), "revocation: access token revoked",
+						"client_id", clientID)
+				}
+			}
+		}
+
+		// Try as refresh token if not yet revoked
+		if !revoked && (tokenTypeHint == "" || tokenTypeHint == "refresh_token") {
+			tokenInfo, err := s.storage.GetTokenByRefresh(token)
+			if err == nil {
+				// Verify client owns this token (if client authenticated)
+				if clientID != "" && tokenInfo.ClientID != clientID {
+					s.logDebugCtx(r.Context(), "revocation: token belongs to different client",
+						"client_id", clientID,
+						"token_client_id", tokenInfo.ClientID)
+					// Per RFC 7009, we return success even if we don't revoke
+					w.WriteHeader(http.StatusOK)
+					return
+				}
+				if err := s.storage.DeleteToken(tokenInfo.AccessToken); err == nil {
+					s.logDebugCtx(r.Context(), "revocation: refresh token revoked",
+						"client_id", clientID)
+				}
+			}
+		}
+		_ = revoked // Silence unused variable lint
+
+		// Per RFC 7009, always return 200 OK (even if token wasn't found)
+		// This prevents token enumeration attacks
+		w.WriteHeader(http.StatusOK)
+	})
+}
+
 // metadataHandler returns the authorization server metadata (RFC 8414).
 func (s *Server) metadataHandler() http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
@@ -671,14 +771,16 @@ func (s *Server) metadataHandler() http.Handler {
 		}
 
 		metadata := map[string]interface{}{
-			"issuer":                                baseURL,
-			"authorization_endpoint":                baseURL + s.paths.Authorization,
-			"token_endpoint":                        baseURL + s.paths.Token,
-			"registration_endpoint":                 baseURL + s.paths.Registration,
-			"response_types_supported":              []string{"code"},
-			"grant_types_supported":                 []string{"authorization_code", "refresh_token"},
-			"token_endpoint_auth_methods_supported": []string{"none", "client_secret_basic", "client_secret_post"},
-			"code_challenge_methods_supported":      []string{"S256"},
+			"issuer":                                     baseURL,
+			"authorization_endpoint":                     baseURL + s.paths.Authorization,
+			"token_endpoint":                             baseURL + s.paths.Token,
+			"registration_endpoint":                      baseURL + s.paths.Registration,
+			"revocation_endpoint":                        baseURL + s.paths.Revocation,
+			"response_types_supported":                   []string{"code"},
+			"grant_types_supported":                      []string{"authorization_code", "refresh_token"},
+			"token_endpoint_auth_methods_supported":      []string{"none", "client_secret_basic", "client_secret_post"},
+			"revocation_endpoint_auth_methods_supported": []string{"none", "client_secret_basic", "client_secret_post"},
+			"code_challenge_methods_supported":           []string{"S256"},
 		}
 
 		if len(s.config.AllowedScopes) > 0 {

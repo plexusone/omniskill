@@ -98,6 +98,9 @@ type PathConfig struct {
 	// Registration is the dynamic client registration path. Defaults to "/oauth/register".
 	Registration string
 
+	// Revocation is the token revocation path (RFC 7009). Defaults to "/oauth/revoke".
+	Revocation string
+
 	// Metadata is the authorization server metadata path.
 	// Defaults to "/.well-known/oauth-authorization-server".
 	Metadata string
@@ -110,6 +113,7 @@ func DefaultPaths() *PathConfig {
 		Authorization: "/oauth/authorize",
 		Token:         "/oauth/token",
 		Registration:  "/oauth/register",
+		Revocation:    "/oauth/revoke",
 		Metadata:      "/.well-known/oauth-authorization-server",
 	}
 }
@@ -265,12 +269,19 @@ func (s *Server) TokenVerifier() func(token string) (*TokenInfo, error) {
 	}
 }
 
+// RevocationHandler returns the HTTP handler for token revocation (RFC 7009).
+// This endpoint allows clients to revoke access or refresh tokens.
+func (s *Server) RevocationHandler() http.Handler {
+	return s.revocationHandler()
+}
+
 // RegisterHandlers registers all OAuth handlers on the given mux using
 // the configured paths. This is a convenience method for simple setups.
 func (s *Server) RegisterHandlers(mux *http.ServeMux) {
 	mux.Handle(s.paths.Authorization, s.AuthorizationHandler())
 	mux.Handle(s.paths.Token, s.TokenHandler())
 	mux.Handle(s.paths.Registration, s.RegistrationHandler())
+	mux.Handle(s.paths.Revocation, s.RevocationHandler())
 	mux.Handle(s.paths.Metadata, s.MetadataHandler())
 }
 
