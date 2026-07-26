@@ -2,7 +2,7 @@
 
 **Initiative:** `INIT-OMNISKILL-001`
 **Repository:** `github.com/plexusone/omniskill`
-**Status:** Executing — 3 of 5 phases completed (Phase 2 in progress)
+**Status:** Executing — 4 of 5 phases completed (Phases 2 and 5 in progress)
 
 > RMI IDs are stable and permanent. Commits implementing an item carry the trailer `Refs: RMI-OMNISKILL-NNN`. Phase status is derived from member RMIs — a phase is complete only when all its required RMIs are complete. Execution detail lives in [PLAN.md](PLAN.md); feature-level plans live under `features/` (e.g., `features/voice-parity/PLAN.md`).
 
@@ -63,15 +63,19 @@
 ## Phase 5 — Ecosystem Integration
 
 **Theme:** OmniSkill as the standard capability layer across PlexusOne.
-**Status:** Not started — 0 of 4 items completed
+**Status:** In Progress — 3 of 4 items completed
 
-- [ ] `RMI-OMNISKILL-018` Migrate remaining PlexusOne agent projects with bespoke tool layers onto omniskill
+- [x] `RMI-OMNISKILL-018` Migrate remaining PlexusOne agent projects with bespoke tool layers onto omniskill
   - Depends on: `RMI-OMNISKILL-004`
-- [ ] `RMI-OMNISKILL-019` `mcp/client` bridging recipes: mount a remote MCP server into a local registry
+  - Delivered: migration guide (`docs/migration/`) and adapter utilities (`migration/` package)
+- [x] `RMI-OMNISKILL-019` `mcp/client` bridging recipes: mount a remote MCP server into a local registry
+  - Delivered: `mcp/bridge/` package with Bridge, RemoteTool, auto-refresh
 - [ ] `RMI-OMNISKILL-020` Cross-repo examples with aha-studio and omniagent kept compile-tested
   - Depends on: `RMI-OMNISKILL-007`
-- [ ] `RMI-OMNISKILL-021` Runtime skill discovery: agents query registry/ClawHub for capabilities by need, not by name
+  - Blocked: requires omniagent delegation wiring
+- [x] `RMI-OMNISKILL-021` Runtime skill discovery: agents query registry/ClawHub for capabilities by need, not by name
   - Depends on: `RMI-OMNISKILL-012`
+  - Delivered: DiscoveryRegistry, Capability constants, ClawHub discover/recommend
 
 ## Sequencing
 
