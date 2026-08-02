@@ -102,7 +102,7 @@ Skills registered with an MCP server runtime can automatically register with a r
 ```go
 reg := registry.New()
 
-rt := server.New(impl, &server.Options{
+rt := runtime.New(impl, &runtime.Options{
     Registry: reg,  // Enable auto-registration
 })
 

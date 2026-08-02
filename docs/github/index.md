@@ -13,7 +13,7 @@ import "github.com/plexusone/omniskill/github"
 ```go
 import (
     "github.com/plexusone/omniskill/github"
-    "github.com/plexusone/omniskill/mcp/server"
+    runtime "github.com/plexusone/omniskill/mcp/server"
 )
 
 // Create GitHub skill
@@ -28,7 +28,7 @@ if err := ghSkill.Init(ctx); err != nil {
 defer ghSkill.Close()
 
 // Register with MCP server
-rt := server.New(impl, nil)
+rt := runtime.New(impl, nil)
 rt.RegisterSkill(ghSkill)
 ```
 

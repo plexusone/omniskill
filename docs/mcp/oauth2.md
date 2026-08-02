@@ -16,14 +16,14 @@ The OAuth2 implementation supports:
 Enable OAuth2 when serving over HTTP:
 
 ```go
-result, err := rt.ServeHTTP(ctx, &server.HTTPServerOptions{
+result, err := rt.ServeHTTP(ctx, &runtime.HTTPServerOptions{
     Addr: ":8080",
-    OAuth2: &server.OAuth2Options{
+    OAuth2: &runtime.OAuth2Options{
         Users: map[string]string{
             "admin": "password",
         },
     },
-    OnReady: func(r *server.HTTPServerResult) {
+    OnReady: func(r *runtime.HTTPServerResult) {
         fmt.Printf("Client ID: %s\n", r.OAuth2.ClientID)
         fmt.Printf("Client Secret: %s\n", r.OAuth2.ClientSecret)
     },
@@ -46,7 +46,7 @@ When OAuth2 is enabled, these endpoints are automatically configured:
 ### Basic Configuration
 
 ```go
-OAuth2: &server.OAuth2Options{
+OAuth2: &runtime.OAuth2Options{
     // Username/password pairs for authentication
     Users: map[string]string{
         "user1": "password1",
@@ -58,7 +58,7 @@ OAuth2: &server.OAuth2Options{
 ### With Pre-configured Clients
 
 ```go
-OAuth2: &server.OAuth2Options{
+OAuth2: &runtime.OAuth2Options{
     Users: map[string]string{"admin": "password"},
 
     // Pre-configure a client
@@ -70,7 +70,7 @@ OAuth2: &server.OAuth2Options{
 ### Custom Token Lifetime
 
 ```go
-OAuth2: &server.OAuth2Options{
+OAuth2: &runtime.OAuth2Options{
     Users:           map[string]string{"admin": "password"},
     TokenExpiration: 24 * time.Hour,  // Default is 1 hour
 }
@@ -213,11 +213,11 @@ For custom authentication logic, use the OAuth2 package directly:
 ```go
 import "github.com/plexusone/omniskill/mcp/oauth2"
 
-authServer := oauth2.NewServer(&oauth2.Config{
+authServer, err := oauth2.New(&oauth2.Config{
     Issuer: "https://myserver.com",
 
-    // Custom user validator
-    ValidateUser: func(username, password string) bool {
+    // Custom authenticator
+    Authenticator: func(username, password string) bool {
         // Check against database, LDAP, etc.
         return validateCredentials(username, password)
     },
@@ -233,15 +233,15 @@ http.Handle("/token", authServer.TokenHandler())
 For ChatGPT.com, OAuth2 is required. Configure your server:
 
 ```go
-rt.ServeHTTP(ctx, &server.HTTPServerOptions{
+rt.ServeHTTP(ctx, &runtime.HTTPServerOptions{
     Addr:          ":443",
     NgrokAuthtoken: os.Getenv("NGROK_AUTHTOKEN"),
-    OAuth2: &server.OAuth2Options{
+    OAuth2: &runtime.OAuth2Options{
         Users: map[string]string{
             os.Getenv("OAUTH_USER"): os.Getenv("OAUTH_PASSWORD"),
         },
     },
-    OnReady: func(r *server.HTTPServerResult) {
+    OnReady: func(r *runtime.HTTPServerResult) {
         fmt.Println("Configure in ChatGPT:")
         fmt.Printf("  MCP URL: %s\n", r.PublicURL)
         fmt.Printf("  Client ID: %s\n", r.OAuth2.ClientID)

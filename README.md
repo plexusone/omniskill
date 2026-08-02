@@ -92,11 +92,11 @@ Call tools directly without MCP overhead:
 
 ```go
 import (
-    "github.com/plexusone/omniskill/mcp/server"
+    runtime "github.com/plexusone/omniskill/mcp/server"
     "github.com/modelcontextprotocol/go-sdk/mcp"
 )
 
-rt := server.New(&mcp.Implementation{
+rt := runtime.New(&mcp.Implementation{
     Name:    "calculator",
     Version: "1.0.0",
 }, nil)
@@ -116,12 +116,12 @@ Expose skills via MCP for Claude Desktop or other clients:
 rt.ServeStdio(ctx)
 
 // HTTP with SSE
-rt.ServeHTTP(ctx, &server.HTTPServerOptions{Addr: ":8080"})
+rt.ServeHTTP(ctx, &runtime.HTTPServerOptions{Addr: ":8080"})
 
 // With OAuth2 authentication (for ChatGPT.com)
-rt.ServeHTTP(ctx, &server.HTTPServerOptions{
+rt.ServeHTTP(ctx, &runtime.HTTPServerOptions{
     Addr: ":8080",
-    OAuth2: &server.OAuth2Options{
+    OAuth2: &runtime.OAuth2Options{
         Users: map[string]string{"admin": "password"},
     },
 })
@@ -180,7 +180,7 @@ Skills registered with the runtime can auto-register with a registry:
 
 ```go
 reg := registry.New()
-rt := server.New(impl, &server.Options{
+rt := runtime.New(impl, &runtime.Options{
     Registry: reg,  // Enable auto-registration
 })
 

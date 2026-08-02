@@ -16,7 +16,7 @@ Voice tools enable AI agents to:
 ```go
 import (
     "github.com/plexusone/omniskill/voicetools"
-    "github.com/plexusone/omniskill/mcp/server"
+    runtime "github.com/plexusone/omniskill/mcp/server"
 )
 
 // Create call context with transport and agent registry
@@ -26,7 +26,7 @@ callCtx := voicetools.NewCallContext(call, transport, agentRegistry)
 voiceSkill := voicetools.NewVoiceSkill(callCtx)
 
 // Register with MCP server
-rt := server.New(impl, nil)
+rt := runtime.New(impl, nil)
 rt.RegisterSkill(voiceSkill)
 
 // Or use tools directly

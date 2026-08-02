@@ -125,7 +125,7 @@ Skills follow this lifecycle:
 ### With MCP Server Runtime
 
 ```go
-rt := server.New(impl, nil)
+rt := runtime.New(impl, nil)
 rt.RegisterSkill(mySkill)
 
 // Or with tool name prefixing
@@ -136,7 +136,7 @@ rt.RegisterSkillWithPrefix(mySkill) // Tools become "skillname_toolname"
 
 ```go
 reg := registry.New()
-rt := server.New(impl, &server.Options{
+rt := runtime.New(impl, &runtime.Options{
     Registry: reg,  // Skills auto-register here
 })
 

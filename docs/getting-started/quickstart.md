@@ -52,14 +52,14 @@ import (
     "fmt"
     "log"
 
-    "github.com/plexusone/omniskill/mcp/server"
+    runtime "github.com/plexusone/omniskill/mcp/server"
     "github.com/plexusone/omniskill/skill"
     "github.com/modelcontextprotocol/go-sdk/mcp"
 )
 
 func main() {
     // Create runtime
-    rt := server.New(&mcp.Implementation{
+    rt := runtime.New(&mcp.Implementation{
         Name:    "calculator",
         Version: "1.0.0",
     }, nil)
@@ -106,13 +106,13 @@ import (
     "context"
     "log"
 
-    "github.com/plexusone/omniskill/mcp/server"
+    runtime "github.com/plexusone/omniskill/mcp/server"
     "github.com/plexusone/omniskill/skill"
     "github.com/modelcontextprotocol/go-sdk/mcp"
 )
 
 func main() {
-    rt := server.New(&mcp.Implementation{
+    rt := runtime.New(&mcp.Implementation{
         Name:    "calculator",
         Version: "1.0.0",
     }, nil)

@@ -223,7 +223,7 @@ for _, tool := range reg.ListTools() {
 
 ```go
 // Create runtime
-rt := server.New(impl, nil)
+rt := runtime.New(impl, nil)
 
 // Connect to remote server
 session, _ := c.ConnectCommand(ctx, cmd)

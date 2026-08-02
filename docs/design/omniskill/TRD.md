@@ -190,7 +190,7 @@ import "github.com/plexusone/mcpkit/client"
 import "github.com/plexusone/mcpkit/oauth2"
 
 // After (omniskill)
-import "github.com/plexusone/omniskill/mcp/server"
+import runtime "github.com/plexusone/omniskill/mcp/server"
 import "github.com/plexusone/omniskill/mcp/client"
 import "github.com/plexusone/omniskill/mcp/oauth2"
 ```

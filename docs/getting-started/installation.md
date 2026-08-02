@@ -24,7 +24,7 @@ import (
     "github.com/plexusone/omniskill/registry"
 
     // MCP server runtime
-    "github.com/plexusone/omniskill/mcp/server"
+    runtime "github.com/plexusone/omniskill/mcp/server"
 
     // MCP client
     "github.com/plexusone/omniskill/mcp/client"

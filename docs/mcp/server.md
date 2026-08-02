@@ -15,11 +15,11 @@ The Runtime type is the core of the MCP server. It supports:
 
 ```go
 import (
-    "github.com/plexusone/omniskill/mcp/server"
+    runtime "github.com/plexusone/omniskill/mcp/server"
     "github.com/modelcontextprotocol/go-sdk/mcp"
 )
 
-rt := server.New(&mcp.Implementation{
+rt := runtime.New(&mcp.Implementation{
     Name:    "my-server",
     Version: "1.0.0",
 }, nil)
@@ -28,7 +28,7 @@ rt := server.New(&mcp.Implementation{
 ## Options
 
 ```go
-rt := server.New(impl, &server.Options{
+rt := runtime.New(impl, &runtime.Options{
     // Custom logger
     Logger: slog.New(slog.NewJSONHandler(os.Stdout, nil)),
 
@@ -66,7 +66,7 @@ type AddOutput struct {
     Sum int `json:"sum"`
 }
 
-server.AddTool(rt, &mcp.Tool{
+runtime.AddTool(rt, &mcp.Tool{
     Name:        "add",
     Description: "Add two numbers",
 }, func(ctx context.Context, req *mcp.CallToolRequest, in AddInput) (*mcp.CallToolResult, AddOutput, error) {
@@ -116,7 +116,7 @@ Claude Desktop configuration:
 ### Basic HTTP Server
 
 ```go
-result, err := rt.ServeHTTP(ctx, &server.HTTPServerOptions{
+result, err := rt.ServeHTTP(ctx, &runtime.HTTPServerOptions{
     Addr: ":8080",
     Path: "/mcp",  // Optional, default is "/"
 })
@@ -132,10 +132,10 @@ log.Fatal(http.ListenAndServe(":8080", nil))
 ### With ngrok Tunnel
 
 ```go
-result, err := rt.ServeHTTP(ctx, &server.HTTPServerOptions{
+result, err := rt.ServeHTTP(ctx, &runtime.HTTPServerOptions{
     Addr:          ":8080",
     NgrokAuthtoken: os.Getenv("NGROK_AUTHTOKEN"),
-    OnReady: func(r *server.HTTPServerResult) {
+    OnReady: func(r *runtime.HTTPServerResult) {
         fmt.Printf("Public URL: %s\n", r.PublicURL)
     },
 })
@@ -154,15 +154,15 @@ http.Handle("/mcp", rt.SSEHandler(nil))
 For public servers that need authentication (required by ChatGPT.com):
 
 ```go
-result, err := rt.ServeHTTP(ctx, &server.HTTPServerOptions{
+result, err := rt.ServeHTTP(ctx, &runtime.HTTPServerOptions{
     Addr: ":8080",
-    OAuth2: &server.OAuth2Options{
+    OAuth2: &runtime.OAuth2Options{
         // Simple username/password authentication
         Users: map[string]string{
             "admin": "password",
         },
     },
-    OnReady: func(r *server.HTTPServerResult) {
+    OnReady: func(r *runtime.HTTPServerResult) {
         fmt.Printf("Client ID: %s\n", r.OAuth2.ClientID)
         fmt.Printf("Client Secret: %s\n", r.OAuth2.ClientSecret)
     },
