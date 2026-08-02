@@ -4,7 +4,7 @@ go 1.26.0
 
 require (
 	github.com/grokify/mogo v0.74.6
-	github.com/modelcontextprotocol/go-sdk v1.6.1
+	github.com/modelcontextprotocol/go-sdk v1.7.0
 	golang.ngrok.com/ngrok v1.13.0
 	golang.org/x/mod v0.38.0
 	gopkg.in/yaml.v3 v3.0.1
@@ -31,6 +31,7 @@ require (
 	golang.org/x/sys v0.47.0 // indirect
 	golang.org/x/term v0.45.0 // indirect
 	golang.org/x/text v0.40.0 // indirect
+	golang.org/x/time v0.15.0 // indirect
 	google.golang.org/protobuf v1.36.11 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 )
