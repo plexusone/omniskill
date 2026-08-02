@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://plexusone.github.io/omniskill/releases/v0.4.0/">
+        <link rel="canonical" href="https://plexusone.github.io/omniskill/mcp/bridge/">
       
       
-        <link rel="prev" href="../v0.5.0/">
+        <link rel="prev" href="../oauth2/">
       
       
-        <link rel="next" href="../v0.3.1/">
+        <link rel="next" href="../../roles/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>v0.4.0 - OmniSkill</title>
+        <title>Bridge - OmniSkill</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#release-notes-v040" class="md-skip">
+        <a href="#mcp-bridge" class="md-skip">
           Skip to content
         </a>
       
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              v0.4.0
+              Bridge
             
           </span>
         </div>
@@ -694,8 +694,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -706,13 +708,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
@@ -733,7 +733,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -751,7 +751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mcp/server/" class="md-nav__link">
+      <a href="../server/" class="md-nav__link">
         
   
   
@@ -779,7 +779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mcp/client/" class="md-nav__link">
+      <a href="../client/" class="md-nav__link">
         
   
   
@@ -807,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mcp/oauth2/" class="md-nav__link">
+      <a href="../oauth2/" class="md-nav__link">
         
   
   
@@ -832,10 +832,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../mcp/bridge/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bridge
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -851,6 +878,81 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Usage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#naming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naming
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tool Conversion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1349,8 +1451,6 @@
       
   
   
-    
-  
   
   
     
@@ -1363,11 +1463,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
         
           
           <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
@@ -1388,7 +1490,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1406,7 +1508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../v0.11.0/" class="md-nav__link">
+      <a href="../../releases/v0.11.0/" class="md-nav__link">
         
   
   
@@ -1434,7 +1536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../v0.10.0/" class="md-nav__link">
+      <a href="../../releases/v0.10.0/" class="md-nav__link">
         
   
   
@@ -1462,7 +1564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../v0.9.0/" class="md-nav__link">
+      <a href="../../releases/v0.9.0/" class="md-nav__link">
         
   
   
@@ -1490,7 +1592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../v0.8.0/" class="md-nav__link">
+      <a href="../../releases/v0.8.0/" class="md-nav__link">
         
   
   
@@ -1518,7 +1620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../v0.7.0/" class="md-nav__link">
+      <a href="../../releases/v0.7.0/" class="md-nav__link">
         
   
   
@@ -1546,7 +1648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../v0.6.0/" class="md-nav__link">
+      <a href="../../releases/v0.6.0/" class="md-nav__link">
         
   
   
@@ -1574,7 +1676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../v0.5.0/" class="md-nav__link">
+      <a href="../../releases/v0.5.0/" class="md-nav__link">
         
   
   
@@ -1599,37 +1701,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    v0.4.0
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../releases/v0.4.0/" class="md-nav__link">
         
   
   
@@ -1645,187 +1720,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Installation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#highlights" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Highlights
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#breaking-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Breaking Changes
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Breaking Changes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#import-path-change" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Import Path Change
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#upgrade-guide" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Upgrade Guide
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Upgrade Guide">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#from-v03x" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        From v0.3.x
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#quick-migration-script" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Quick Migration Script
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#whats-changed" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What's Changed
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="What&#39;s Changed">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#changed" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Changed
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api-compatibility" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        API Compatibility
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#contributors" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Contributors
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#links" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Links
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1838,7 +1732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../v0.3.1/" class="md-nav__link">
+      <a href="../../releases/v0.3.1/" class="md-nav__link">
         
   
   
@@ -1866,7 +1760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../v0.3.0/" class="md-nav__link">
+      <a href="../../releases/v0.3.0/" class="md-nav__link">
         
   
   
@@ -1894,7 +1788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../v0.2.0/" class="md-nav__link">
+      <a href="../../releases/v0.2.0/" class="md-nav__link">
         
   
   
@@ -1922,7 +1816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../v0.1.0/" class="md-nav__link">
+      <a href="../../releases/v0.1.0/" class="md-nav__link">
         
   
   
@@ -1977,10 +1871,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#basic-usage" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Basic Usage
       
     </span>
   </a>
@@ -1988,10 +1882,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#naming" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation
+        Naming
       
     </span>
   </a>
@@ -1999,10 +1893,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#highlights" class="md-nav__link">
+  <a href="#tool-conversion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights
+        Tool Conversion
       
     </span>
   </a>
@@ -2010,105 +1904,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#breaking-changes" class="md-nav__link">
+  <a href="#lifecycle" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Breaking Changes
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Breaking Changes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#import-path-change" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Import Path Change
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#upgrade-guide" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Upgrade Guide
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Upgrade Guide">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#from-v03x" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        From v0.3.x
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#quick-migration-script" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Quick Migration Script
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#whats-changed" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What's Changed
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="What&#39;s Changed">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#changed" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Changed
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api-compatibility" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        API Compatibility
+        Lifecycle
       
     </span>
   </a>
@@ -2116,21 +1915,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#contributors" class="md-nav__link">
+  <a href="#see-also" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Contributors
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#links" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Links
+        See Also
       
     </span>
   </a>
@@ -2157,97 +1945,63 @@
   
 
 
-<h1 id="release-notes-v040">Release Notes - v0.4.0<a class="headerlink" href="#release-notes-v040" title="Permanent link">&para;</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Superseded</p>
-<p>This release used the <code>mcpkit</code> module path which has been superseded by <code>omniskill</code>. See <a href="../v0.6.0/">v0.6.0</a> for migration instructions to <code>github.com/plexusone/omniskill</code>.</p>
-</div>
-<p><strong>Release Date:</strong> 2026-03-07</p>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>This release migrates MCPKit to the <code>plexusone</code> organization and updates the changelog format to use camelCase for ecosystem consistency with structured-changelog tooling.</p>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>go<span class="w"> </span>get<span class="w"> </span>github.com/plexusone/mcpkit@v0.4.0
+<h1 id="mcp-bridge">MCP Bridge<a class="headerlink" href="#mcp-bridge" title="Permanent link">&para;</a></h1>
+<p><em>Added in v0.11.0.</em> The <code>mcp/bridge</code> package mounts a remote MCP server as a local skill in the omniskill registry. Tools from the remote server become callable through the standard <code>skill.Tool</code> interface, so agent code doesn't need to know whether a tool is local or remote.</p>
+<h2 id="basic-usage">Basic Usage<a class="headerlink" href="#basic-usage" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="s">&quot;github.com/plexusone/omniskill/mcp/bridge&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="s">&quot;github.com/plexusone/omniskill/mcp/client&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="s">&quot;github.com/plexusone/omniskill/registry&quot;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">)</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1">// Connect to a remote MCP server</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nx">c</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;my-client&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1.0.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">nil</span><span class="p">)</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="nx">cmd</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">exec</span><span class="p">.</span><span class="nx">Command</span><span class="p">(</span><span class="s">&quot;npx&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-y&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;@modelcontextprotocol/server-github&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="nx">session</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">ConnectCommand</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">cmd</span><span class="p">,</span><span class="w"> </span><span class="kc">nil</span><span class="p">)</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">err</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">}</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="k">defer</span><span class="w"> </span><span class="nx">session</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1">// Bridge the session to a local skill</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="nx">b</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">bridge</span><span class="p">.</span><span class="nx">NewBridge</span><span class="p">(</span><span class="nx">session</span><span class="p">)</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="nx">remoteSkill</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">b</span><span class="p">.</span><span class="nx">ToSkill</span><span class="p">(</span><span class="nx">ctx</span><span class="p">)</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">err</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="p">}</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="c1">// Register in local registry</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="nx">reg</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">registry</span><span class="p">.</span><span class="nx">New</span><span class="p">()</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="nx">reg</span><span class="p">.</span><span class="nx">Register</span><span class="p">(</span><span class="nx">remoteSkill</span><span class="p">)</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="c1">// Now use tools through the registry</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="nx">tool</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">reg</span><span class="p">.</span><span class="nx">GetTool</span><span class="p">(</span><span class="s">&quot;github.create_issue&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="nx">result</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">tool</span><span class="p">.</span><span class="nx">Call</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">{</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">    </span><span class="s">&quot;owner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;myorg&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span><span class="s">&quot;repo&quot;</span><span class="p">:</span><span class="w">  </span><span class="s">&quot;myrepo&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">    </span><span class="s">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Bug report&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="p">})</span>
 </code></pre></div>
-<p>Requires Go 1.25+ and MCP Go SDK v1.3.0+.</p>
-<h2 id="highlights">Highlights<a class="headerlink" href="#highlights" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Organization renamed</strong> from <code>agentplexus</code> to <code>plexusone</code></li>
-<li><strong>Changelog format</strong> updated to camelCase for ecosystem consistency</li>
-</ul>
-<h2 id="breaking-changes">Breaking Changes<a class="headerlink" href="#breaking-changes" title="Permanent link">&para;</a></h2>
-<p>This release contains a breaking change to the module path.</p>
-<h3 id="import-path-change">Import Path Change<a class="headerlink" href="#import-path-change" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// Before (v0.3.x)</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/agentplexus/mcpkit/runtime&quot;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/agentplexus/mcpkit/oauth2&quot;</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1">// After (v0.4.0)</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/plexusone/mcpkit/runtime&quot;</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/plexusone/mcpkit/oauth2&quot;</span>
+<h2 id="naming">Naming<a class="headerlink" href="#naming" title="Permanent link">&para;</a></h2>
+<p>By default, the bridged skill's name is derived from the remote MCP server's implementation name (<code>InitializeResult.ServerInfo.Name</code>). Override it with <code>WithName</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">b</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">bridge</span><span class="p">.</span><span class="nx">NewBridge</span><span class="p">(</span><span class="nx">session</span><span class="p">,</span><span class="w"> </span><span class="nx">bridge</span><span class="p">.</span><span class="nx">WithName</span><span class="p">(</span><span class="s">&quot;gh&quot;</span><span class="p">))</span>
 </code></pre></div>
-<h2 id="upgrade-guide">Upgrade Guide<a class="headerlink" href="#upgrade-guide" title="Permanent link">&para;</a></h2>
-<h3 id="from-v03x">From v0.3.x<a class="headerlink" href="#from-v03x" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p><strong>Update go.mod</strong>:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>go<span class="w"> </span>get<span class="w"> </span>github.com/plexusone/mcpkit@v0.4.0
-</code></pre></div></p>
-</li>
-<li>
-<p><strong>Update imports</strong> in all Go files:</p>
-</li>
-<li>
-<p>Replace <code>github.com/agentplexus/mcpkit</code> with <code>github.com/plexusone/mcpkit</code></p>
-</li>
-<li>
-<p><strong>Clean up dependencies</strong>:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>go<span class="w"> </span>mod<span class="w"> </span>tidy
-</code></pre></div></p>
-</li>
-</ol>
-<h3 id="quick-migration-script">Quick Migration Script<a class="headerlink" href="#quick-migration-script" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># In your project directory</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.go&quot;</span><span class="w"> </span>-exec<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span>-e<span class="w"> </span><span class="s1">&#39;s|github.com/agentplexus/mcpkit|github.com/plexusone/mcpkit|g&#39;</span><span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>go<span class="w"> </span>mod<span class="w"> </span>tidy
-</code></pre></div>
-<h2 id="whats-changed">What's Changed<a class="headerlink" href="#whats-changed" title="Permanent link">&para;</a></h2>
-<h3 id="changed">Changed<a class="headerlink" href="#changed" title="Permanent link">&para;</a></h3>
+<p>The remote server's implementation version becomes the skill's <code>Version()</code>.</p>
+<h2 id="tool-conversion">Tool Conversion<a class="headerlink" href="#tool-conversion" title="Permanent link">&para;</a></h2>
+<p><code>ToSkill</code> fetches the tool list from the MCP server and wraps each one in a <code>RemoteTool</code>:</p>
 <ul>
-<li>All package imports updated to <code>github.com/plexusone/mcpkit</code></li>
-<li>Documentation and badge URLs updated to plexusone organization</li>
-<li>Changelog JSON format migrated from snake_case to camelCase</li>
+<li>Tool name and description are preserved.</li>
+<li>JSON Schema input schemas become <code>skill.Parameter</code> maps.</li>
+<li>Tool calls are proxied through the MCP session; <code>RemoteTool.Call</code> wraps MCP transport and execution errors with context.</li>
+<li>Results are returned as-is from the MCP server.</li>
 </ul>
-<h2 id="api-compatibility">API Compatibility<a class="headerlink" href="#api-compatibility" title="Permanent link">&para;</a></h2>
-<p>All APIs remain functionally identical to v0.3.x. Only the import paths have changed:</p>
-<table>
-<thead>
-<tr>
-<th>v0.3.x</th>
-<th>v0.4.0</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>github.com/agentplexus/mcpkit/runtime</code></td>
-<td><code>github.com/plexusone/mcpkit/runtime</code></td>
-</tr>
-<tr>
-<td><code>github.com/agentplexus/mcpkit/oauth2</code></td>
-<td><code>github.com/plexusone/mcpkit/oauth2</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="contributors">Contributors<a class="headerlink" href="#contributors" title="Permanent link">&para;</a></h2>
+<h2 id="lifecycle">Lifecycle<a class="headerlink" href="#lifecycle" title="Permanent link">&para;</a></h2>
+<p><code>Bridge</code> and the returned <code>RemoteSkill</code> do not own the underlying <code>client.Session</code> — <code>RemoteSkill.Init</code>/<code>Close</code> are no-ops. The caller is responsible for closing the session (e.g., via <code>defer session.Close()</code>).</p>
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
 <ul>
-<li>John Wang</li>
-</ul>
-<h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="https://github.com/plexusone/mcpkit">GitHub Repository</a></li>
-<li><a href="https://pkg.go.dev/github.com/plexusone/mcpkit">Go Package Documentation</a></li>
-<li><a href="https://github.com/modelcontextprotocol/go-sdk">MCP Go SDK</a></li>
-<li><a href="https://modelcontextprotocol.io/">Model Context Protocol Specification</a></li>
+<li><a href="../client/">MCP Client</a> - Connecting to remote MCP servers</li>
+<li><a href="../../concepts/registry/">Registry</a> - Skill registration and discovery</li>
+<li><a href="../../migration/">Migration</a> - Moving bespoke tool layers to omniskill</li>
 </ul>
 
 
