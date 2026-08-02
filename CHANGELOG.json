@@ -7,6 +7,59 @@
   "maintainers": ["plexusone"],
   "releases": [
     {
+      "version": "v0.11.0",
+      "date": "2026-08-02",
+      "highlights": [
+        { "description": "New `mcp/bridge/` package mounts remote MCP servers as local skills in the registry" },
+        { "description": "New `migration/` package with adapters and a `Check()` validator for moving bespoke tool layers onto omniskill" },
+        { "description": "New `roles/` package with reference role implementations (`CodeReviewer`, `MeetingPM`)" },
+        { "description": "Capability-based skill discovery in `registry/` (`FindByCapability`, `FindByKeyword`, `FindByCategory`)" },
+        { "description": "`role.Role` and `skill.Skill` interfaces gain a `Version()` method as part of pre-1.0 interface stabilization" }
+      ],
+      "breaking": [
+        { "description": "`role.Role` interface adds `Version() string`; custom `Role` implementations that don't embed `role.BaseRole` must add this method", "commit": "e39af03" },
+        { "description": "`skill.Skill` interface adds `Version() string`; custom `Skill` implementations that don't embed `skill.BaseSkill` must add this method", "commit": "6fb561e" }
+      ],
+      "added": [
+        { "description": "`mcp/bridge`: `Bridge.ToSkill()` mounts a remote MCP session as a local `skill.Skill`, proxying tool calls through the session", "commit": "1a077b7" },
+        { "description": "`migration`: `AdaptTool`/`AdaptSkill` wrap legacy tool/skill types to implement `skill.Tool`/`skill.Skill`", "commit": "e4e1230" },
+        { "description": "`migration`: `Check()` validates registry migration completeness and reports actionable issues", "commit": "e4e1230" },
+        { "description": "`registry`: `Capability` type with standard constants (file, http, code, git, database, communication, search, etc.) and `CapabilityProvider`/`KeywordProvider` interfaces", "commit": "521e105" },
+        { "description": "`registry`: `DiscoveryRegistry` interface with `FindByCapability`, `FindByCapabilities`, `FindByAnyCapability`, `FindByKeyword`, `FindByCategory`, `RegisterCapabilities`", "commit": "521e105" },
+        { "description": "`clawhub`: `Hub.Discover()` and `Hub.RecommendSkills()` for capability-based marketplace search and natural-language recommendations", "commit": "521e105" },
+        { "description": "`installer`: `VersionConstraint` and `SemVer` types supporting exact, range, caret (`^`), tilde (`~`), and `latest`/`*` version pinning", "commit": "3cc8fa0" },
+        { "description": "`pack`: `PublishConfig`/`PublishBundle` prepare a validated, checksummed tarball for publishing a skill pack", "commit": "bc5586b" },
+        { "description": "`pack`: SKILL.md validation with `ValidationResult`/`ValidationError`, distinguishing errors from warnings", "commit": "e9f6b2a" },
+        { "description": "`pack`: scaffolding helper for generating new `SkillPack` directory structures", "commit": "f2b9900" },
+        { "description": "`mcp/oauth2`: `RevocationHandler()` implements RFC 7009 token revocation for access and refresh tokens", "commit": "ad19458" },
+        { "description": "`mcp/transport`: WebSocket transport evaluation stub", "commit": "84826e9" },
+        { "description": "`mcp/server`: rate-limiting middleware (token bucket, per-client key, configurable burst) and tool authorization middleware", "commit": "3c8af3c" },
+        { "description": "`mcp/server`: `LoggingMiddleware` for structured request logging via `slog`", "commit": "09c4fce" },
+        { "description": "`roles`: reference role implementations `CodeReviewer` (configurable strictness) and `MeetingPM`", "commit": "b37615a" },
+        { "description": "`role`: `ValidateSkills()` checks a role's required/optional skills against a registry with actionable error messages", "commit": "2c2e821" },
+        { "description": "`role`: `Version() string` added to the `Role` interface and `BaseRole`", "commit": "e39af03" },
+        { "description": "`skill`: `Version() string` added to the `Skill` interface and `BaseSkill`", "commit": "6fb561e" },
+        { "description": "`skill`: JSON Schema fields added to `Parameter` for richer tool input schemas", "commit": "f9a5685" }
+      ],
+      "fixed": [
+        { "description": "Implement `Version()` on `MarkdownSkill` and `SessionSkill` to satisfy the updated `Skill` interface", "commit": "d456ad7" }
+      ],
+      "dependencies": [
+        { "description": "Bump `github.com/modelcontextprotocol/go-sdk` from v1.6.1 to v1.7.0", "commit": "74511a7" },
+        { "description": "Bump `golang.org/x/mod` from v0.37.0 to v0.38.0", "commit": "2285759" }
+      ],
+      "documentation": [
+        { "description": "Add package-level `doc.go` for `role`, `loader`, `pack`, `installer`, `clawhub`", "commit": "4e0c480" },
+        { "description": "Add pre-1.0 deprecation policy (`DEPRECATION.md`)", "commit": "3cdee6e" },
+        { "description": "Add `CLAUDE.md` and project specs (PRD, TRD, PLAN, ARCHITECTURE, interface gap analysis)", "commit": "0515fd4" },
+        { "description": "Mark INIT-OMNISKILL-001 roadmap initiative complete (all 5 phases, 21 RMIs)", "commit": "c90a231" }
+      ],
+      "upgradeGuide": [
+        { "description": "If you implement `role.Role` or `skill.Skill` directly (without embedding `role.BaseRole`/`skill.BaseSkill`), add a `Version() string` method to your type" },
+        { "description": "Skills wanting capability-based discovery should implement `registry.CapabilityProvider` and/or `registry.KeywordProvider`, or call `DiscoveryRegistry.RegisterCapabilities`" }
+      ]
+    },
+    {
       "version": "v0.10.0",
       "date": "2026-07-05",
       "highlights": [
