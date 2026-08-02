@@ -290,6 +290,33 @@ if err != nil {
 }
 ```
 
+## Version Pinning
+
+*Added in v0.11.0.* `VersionConstraint` and `SemVer` support common version-range syntax for pinning skill dependencies to a compatible range:
+
+```go
+import "github.com/plexusone/omniskill/installer"
+
+c, err := installer.ParseVersionConstraint("^1.2.3") // >=1.2.3, <2.0.0
+c, err  = installer.ParseVersionConstraint("~1.2.3") // >=1.2.3, <1.3.0
+c, err  = installer.ParseVersionConstraint(">=1.0.0")
+c, err  = installer.ParseVersionConstraint("latest") // or "*"
+
+v, err := installer.ParseSemVer("1.4.0")
+if c.Matches(v) {
+    // version satisfies the constraint
+}
+```
+
+Supported constraint types: exact (`1.2.3`), range (`>=`, `<=`, `>`, `<`), caret (`^`), tilde (`~`), and `latest`/`*`.
+
+`PinnedSource` builds on this to resolve a concrete version from a list of available versions:
+
+```go
+p, err := installer.ParsePinnedSource("github.com/user/tool@^1.2.0")
+version, err := p.ResolveVersion([]string{"1.1.0", "1.2.0", "1.3.0", "2.0.0"}) // "1.3.0"
+```
+
 ## See Also
 
 - [Loader](loader.md) - Loading skills and SKILL.md format

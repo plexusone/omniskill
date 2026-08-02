@@ -114,6 +114,37 @@ s, _ := reg.Get("myskill")
 fmt.Println(s.Name())  // "myskill"
 ```
 
+## Capability-Based Discovery
+
+*Added in v0.11.0.* `DiscoveryRegistry` extends `Registry` so agents can find skills by capability or keyword instead of by name:
+
+```go
+import "github.com/plexusone/omniskill/registry"
+
+type MySkill struct{ skill.BaseSkill }
+
+func (s *MySkill) Capabilities() []registry.Capability {
+    return []registry.Capability{registry.CapabilityCodeExecute, registry.CapabilityCodeTest}
+}
+
+reg := registry.NewDiscovery()
+reg.Register(&MySkill{})
+
+skills := reg.FindByCapability(registry.CapabilityCodeExecute)
+skills = reg.FindByCapabilities([]registry.Capability{registry.CapabilityCodeExecute, registry.CapabilityCodeTest}) // ALL
+skills = reg.FindByAnyCapability([]registry.Capability{registry.CapabilityFileRead, registry.CapabilityFileWrite})  // ANY
+skills = reg.FindByKeyword("test")
+skills = reg.FindByCategory("code") // matches capabilities like "code:execute", "code:test"
+```
+
+Skills opt in by implementing `CapabilityProvider` (`Capabilities() []Capability`) and/or `KeywordProvider` (`Keywords() []string`). Skills that can't implement these directly can have capabilities registered explicitly:
+
+```go
+reg.RegisterCapabilities("legacy-skill", []registry.Capability{registry.CapabilityHTTPRequest})
+```
+
+Standard capability constants cover file, HTTP, code, git, database, communication, and search categories (`registry.CapabilityFileRead`, `registry.CapabilityGitCommit`, etc.).
+
 ## Unregistering Skills
 
 ```go

@@ -252,6 +252,53 @@ func TestPackFS(t *testing.T) {
 |------|-------------|---------|
 | [omniagent-skills](https://github.com/plexusone/omniagent-skills) | Default pack with 18 skills | `go get github.com/plexusone/omniagent-skills` |
 
+## Validation
+
+*Added in v0.11.0.* Validate a `SKILL.md` tree before packaging it, catching errors and warnings separately:
+
+```go
+import "github.com/plexusone/omniskill/pack"
+
+result, err := pack.ValidatePack(pack.ValidateConfig{
+    SkillsDir: "./skills",
+    Strict:    true, // treat warnings as errors
+})
+if !result.Valid {
+    for _, e := range result.Errors {
+        fmt.Printf("[%s] %s: %s: %s\n", e.Severity, e.Skill, e.Field, e.Message)
+    }
+}
+```
+
+## Publishing
+
+*Added in v0.11.0.* `PrepareForPublish` validates a skills directory and produces a checksummed tarball ready to distribute:
+
+```go
+bundle, err := pack.PrepareForPublish(pack.PublishConfig{
+    SkillsDir: "./skills",
+    PackName:  "my-pack",
+    OutputDir: "./dist",
+    Strict:    true, // treat validation warnings as errors
+})
+// bundle.BundlePath, bundle.Checksum, bundle.Size
+```
+
+## Scaffolding
+
+*Added in v0.11.0.* Generate a new `SkillPack` Go source file from a skills directory:
+
+```go
+result, err := pack.Scaffold(pack.ScaffoldConfig{
+    SkillsDir:      "./skills",
+    PackageName:    "skills",
+    PackName:       "my-pack",
+    OutputDir:      ".",
+    IncludeVersion: true, // embed the git commit hash as the pack version
+})
+// result.OutputPath
+```
+
 ## See Also
 
 - [Skills](skills.md) - Creating individual skills
