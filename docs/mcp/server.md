@@ -11,6 +11,13 @@ The Runtime type is the core of the MCP server. It supports:
 - **Skill registration** - Register skills and their tools
 - **OAuth 2.1** - Built-in authentication for public servers
 
+!!! note
+    This package's Go identifier is `runtime`, not `server` — the directory name (`mcp/server`) and the package name differ. Import it with an explicit alias, as shown throughout this page:
+
+    ```go
+    import runtime "github.com/plexusone/omniskill/mcp/server"
+    ```
+
 ## Creating a Runtime
 
 ```go
@@ -231,4 +238,46 @@ rt.AddResource(&mcp.Resource{
 ```go
 mcpServer := rt.MCPServer()
 // Use mcp.Server methods directly
+```
+
+## Middleware
+
+*Added in v0.11.0.* The package's `net/http` middleware works with any `HTTPServerOptions`-based server. Import it with the `runtime` alias used throughout this page (see [Creating a Runtime](#creating-a-runtime)).
+
+### Rate Limiting
+
+`NewRateLimiter` implements a per-client token-bucket rate limiter:
+
+```go
+rl := runtime.NewRateLimiter(&runtime.RateLimiterConfig{
+    RequestsPerSecond: 5,
+    BurstSize:         10, // defaults to 10 if unset
+    KeyFunc: func(r *http.Request) string {
+        return r.Header.Get("X-Client-ID") // defaults to r.RemoteAddr
+    },
+})
+
+handler = rl.Middleware()(handler)
+```
+
+Requests exceeding the limit get `429 Too Many Requests` unless `OnLimited` is set to a custom handler.
+
+### Tool Authorization
+
+`NewToolAuthorizer` and `NewPolicyAuthorizer` gate which tools a client may call:
+
+```go
+auth := runtime.NewToolAuthorizer(&runtime.ToolAuthorizerConfig{
+    // per-client / per-tool policy
+})
+
+handler = auth.Middleware()(handler)
+```
+
+### Structured Logging
+
+`LoggingMiddleware` logs request start (DEBUG) and completion (INFO) — method, path, status, and duration — via `slog`:
+
+```go
+handler = runtime.LoggingMiddleware(logger)(handler)
 ```

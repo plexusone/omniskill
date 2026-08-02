@@ -250,6 +250,17 @@ rt.ServeHTTP(ctx, &runtime.HTTPServerOptions{
 })
 ```
 
+## Token Revocation
+
+*Added in v0.11.0.* `Server.RevocationHandler()` implements [RFC 7009](https://datatracker.ietf.org/doc/html/rfc7009) token revocation, mounted by default at `/oauth/revoke`:
+
+```go
+srv, err := oauth2.New(&oauth2.Config{Issuer: "https://myserver.com"})
+mux.Handle("/oauth/revoke", srv.RevocationHandler())
+```
+
+The endpoint accepts an access or refresh token via `token` (and optional `token_type_hint`) and revokes it. Per the spec, it always returns `200 OK` regardless of whether the token was found, to avoid leaking token validity to callers.
+
 ## Security Notes
 
 1. **HTTPS Required** - Always use HTTPS in production
