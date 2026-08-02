@@ -28,14 +28,16 @@ OmniSkill provides a common interface for defining, registering, and invoking AI
 
 - **skill/** - Core Skill and Tool interfaces, CommandTool for CLI wrapping
 - **role/** - Role interfaces for agent personas with behaviors, policies, and delegation
+- **roles/** - Reference role implementations (CodeReviewer, MeetingPM)
 - **loader/** - Skill loaders for SKILL.md markdown and Go formats
-- **installer/** - Dependency management for skill requirements
+- **installer/** - Dependency management for skill requirements, with version pinning
 - **clawhub/** - ClawHub marketplace integration for skill discovery
-- **pack/** - Skill pack interface for embedding markdown skills
-- **registry/** - Skill registration and discovery
-- **github/** - GitHub skill for issues, PRs, and code search
-- **mcp/server/** - MCP server runtime with tools, prompts, resources
+- **pack/** - Skill pack interface, validation, publishing, and scaffolding
+- **registry/** - Skill registration and capability-based discovery
+- **migration/** - Adapters and validation for migrating bespoke tool layers to omniskill
+- **mcp/server/** - MCP server runtime with tools, prompts, resources, rate limiting
 - **mcp/client/** - MCP client for connecting to remote servers
+- **mcp/bridge/** - Mount remote MCP servers as local skills
 - **mcp/oauth2/** - OAuth 2.1 Authorization Server for authenticated MCP
 - **voicetools/** - Voice call control tools (transfer, hold, consult, conference)
 
@@ -200,16 +202,17 @@ github.com/plexusone/omniskill
 │   ├── metric.go      # MetricDefinition, MetricType, MetricTarget
 │   ├── delegation.go  # DelegationConfig, DelegationRule
 │   └── workflow.go    # Workflow interface, WorkflowResult, Artifact
-├── github/      # GitHub skill (issues, PRs, code search)
+├── roles/       # Reference role implementations (CodeReviewer, MeetingPM)
 ├── loader/      # Skill loaders for SKILL.md and Go formats
-├── installer/   # Dependency management for skills
+├── installer/   # Dependency management for skills, with version pinning
 ├── clawhub/     # ClawHub marketplace integration
 │   ├── hub.go       # API client
 │   ├── manifest.go  # CLAWHUB.json parsing
 │   ├── resolver.go  # Dependency resolution
 │   └── security.go  # Security scanning
-├── pack/        # Skill pack interface for markdown bundles
-├── registry/    # Skill registration and discovery
+├── pack/        # Skill pack interface: validation, publishing, scaffolding
+├── registry/    # Skill registration and capability-based discovery
+├── migration/   # Adapters and validation for migrating bespoke tool layers
 ├── voicetools/  # Voice call control tools
 │   ├── context.go     # CallContext, Call, Transport interfaces
 │   ├── registry.go    # NewVoiceSkill() registration
@@ -218,9 +221,10 @@ github.com/plexusone/omniskill
 │   ├── consult.go     # consult_agent tool
 │   └── conference.go  # add_to_conference tool
 ├── mcp/
-│   ├── server/  # MCP server runtime
+│   ├── server/  # MCP server runtime (rate limiting, tool auth, logging)
 │   ├── client/  # MCP client for remote servers
-│   └── oauth2/  # OAuth 2.1 authorization server
+│   ├── bridge/  # Mount remote MCP servers as local skills
+│   └── oauth2/  # OAuth 2.1 authorization server (with RFC 7009 revocation)
 └── doc.go
 ```
 
@@ -269,7 +273,11 @@ Roles can implement additional interfaces for enhanced capabilities:
 | `DelegationProvider` | Sub-agent orchestration |
 | `PolicyProvider` | Governance rules |
 
-See [Role Interface Reference](docs/role-interface.md) for complete documentation.
+Roles also implement `Version() string` (via `role.BaseRole` or directly), matching the `skill.Skill` interface's versioning convention.
+
+The `roles/` package ships reference implementations built on `role.BaseRole` - `CodeReviewer` (configurable strictness) and `MeetingPM` - usable directly or as templates for custom roles.
+
+See [Role Interface Reference](https://plexusone.github.io/omniskill/roles/interface/) for complete documentation.
 
 ## Voice Tools
 
@@ -302,19 +310,17 @@ rt.RegisterSkill(voiceSkill)
 
 ## GitHub
 
-The `github/` package provides a GitHub skill for AI agents to interact with GitHub repositories:
+The GitHub skill was extracted to a separate repository in v0.10.0 to keep omniskill's dependency footprint light:
+
+```bash
+go get github.com/plexusone/omniskill-github@latest
+```
 
 ```go
-import (
-    "github.com/plexusone/omniskill/github"
-)
+import "github.com/plexusone/omniskill-github/skill"
 
-// Create GitHub skill with token
-ghSkill := github.New(github.Config{
-    Token: os.Getenv("GITHUB_TOKEN"),
-})
+ghSkill := skill.NewGitHubSkill(os.Getenv("GITHUB_TOKEN"))
 
-// Initialize and register with MCP server
 if err := ghSkill.Init(ctx); err != nil {
     log.Fatal(err)
 }
@@ -323,20 +329,7 @@ defer ghSkill.Close()
 rt.RegisterSkill(ghSkill)
 ```
 
-### Available Tools
-
-| Tool | Description |
-|------|-------------|
-| `list_issues` | List issues in a repository with filters |
-| `get_issue` | Get details of a specific issue |
-| `create_issue` | Create a new issue |
-| `update_issue` | Update an existing issue |
-| `add_issue_comment` | Add a comment to an issue |
-| `list_pull_requests` | List pull requests in a repository |
-| `get_pull_request` | Get details of a specific pull request |
-| `add_pull_request_comment` | Add a comment to a pull request |
-| `search_code` | Search for code across repositories |
-| `search_issues` | Search issues and pull requests |
+See [omniskill-github](https://github.com/plexusone/omniskill-github) for tool reference and documentation.
 
 ## Documentation
 

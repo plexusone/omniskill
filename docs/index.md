@@ -18,6 +18,8 @@ OmniSkill provides a common interface for defining, registering, and invoking AI
 - **Type-Safe Handlers** - Generic handlers with automatic schema inference
 - **ClawHub Marketplace** - Discover, install, and share skills
 - **GitHub Integration** - Install skills from GitHub repositories and releases
+- **Capability-Based Discovery** - Find skills by capability or keyword, not just by name
+- **MCP Bridging** - Mount remote MCP servers as local skills
 
 ## Quick Example
 
@@ -82,13 +84,17 @@ github.com/plexusone/omniskill
 │   ├── manifest.go  # CLAWHUB.json parsing
 │   ├── resolver.go  # Dependency resolution
 │   └── security.go  # Security scanning
-├── registry/    # Skill registration and discovery
-├── pack/        # Skill pack interface
+├── registry/    # Skill registration and capability-based discovery
+├── pack/        # Skill pack interface, validation, publishing, scaffolding
+├── migration/   # Adapters and validation for migrating bespoke tool layers
+├── role/        # Role interfaces for agent personas
+├── roles/       # Reference role implementations (CodeReviewer, MeetingPM)
 ├── voicetools/  # Voice call control tools
 ├── mcp/
-│   ├── server/  # MCP server runtime
+│   ├── server/  # MCP server runtime (rate limiting, tool auth, logging)
 │   ├── client/  # MCP client for remote servers
-│   └── oauth2/  # OAuth 2.1 authorization server
+│   ├── bridge/  # Mount remote MCP servers as local skills
+│   └── oauth2/  # OAuth 2.1 authorization server (with RFC 7009 revocation)
 └── doc.go
 ```
 
@@ -103,7 +109,9 @@ github.com/plexusone/omniskill
 - [Skills](concepts/skills.md)
 - [Tools](concepts/tools.md)
 - [Loader](concepts/loader.md) - Loading SKILL.md and other formats
-- [Installer](concepts/installer.md) - Managing skill dependencies
+- [Installer](concepts/installer.md) - Managing skill dependencies and version pinning
 - [ClawHub Marketplace](concepts/clawhub.md) - Discover and install skills
 - [Voice Tools](voicetools/index.md) - AI agent voice call control
-- [Registry](concepts/registry.md)
+- [Registry](concepts/registry.md) - Registration and capability-based discovery
+- [MCP Bridge](mcp/bridge.md) - Mount remote MCP servers as local skills
+- [Migration Guide](migration/README.md) - Moving bespoke tool layers to omniskill
