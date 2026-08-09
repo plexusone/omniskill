@@ -7,6 +7,27 @@
   "maintainers": ["plexusone"],
   "releases": [
     {
+      "version": "v0.12.0",
+      "date": "2026-08-09",
+      "highlights": [
+        { "description": "`mcp/oauth2`: external `TokenVerifier` seam lets a server run as a pure OAuth resource server against externally-issued tokens (enterprise IdP / ID-JAG), instead of the built-in authorization server" },
+        { "description": "`TokenInfo` carries an RFC 8693 actor delegation chain and raw claims from external tokens into request context" }
+      ],
+      "added": [
+        { "description": "`mcp/oauth2`: `TokenVerifier` interface and `TokenVerifierFunc` adapter for pluggable external token verification", "commit": "947d8c1" },
+        { "description": "`mcp/oauth2`: `ExternalBearerMiddleware` validates bearer tokens via an injected `TokenVerifier` and stores `TokenInfo` in context, with RFC 9728-compliant `WWW-Authenticate` challenges", "commit": "947d8c1" },
+        { "description": "`mcp/oauth2`: `ExternalProtectedResourceMetadataHandler` serves RFC 9728 protected resource metadata for externally-governed resources", "commit": "947d8c1" },
+        { "description": "`mcp/oauth2`: `TokenInfo.Actor` (RFC 8693 delegation chain) and `TokenInfo.Claims` (raw external claims); `GetActorFromContext` reads the chain from a request", "commit": "947d8c1" },
+        { "description": "`mcp/server`: `HTTPServerOptions.ExternalAuth` (`ExternalAuthOptions`) runs `ServeHTTP` as a pure resource server, mutually exclusive with `OAuth`/`OAuth2`", "commit": "0d16c82" }
+      ],
+      "tests": [
+        { "description": "Cover the external token verifier, bearer middleware, protected resource metadata handler, and `ServeHTTP` `ExternalAuth` wiring (including mutual-exclusion and required-field validation)", "commit": "8d8a849" }
+      ],
+      "documentation": [
+        { "description": "Document external resource-server mode in the OAuth 2.1 and MCP server guides; add v0.12.0 release notes" }
+      ]
+    },
+    {
       "version": "v0.11.0",
       "date": "2026-08-02",
       "highlights": [
