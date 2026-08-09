@@ -38,7 +38,7 @@ OmniSkill provides a common interface for defining, registering, and invoking AI
 - **mcp/server/** - MCP server runtime with tools, prompts, resources, rate limiting
 - **mcp/client/** - MCP client for connecting to remote servers
 - **mcp/bridge/** - Mount remote MCP servers as local skills
-- **mcp/oauth2/** - OAuth 2.1 Authorization Server for authenticated MCP
+- **mcp/oauth2/** - OAuth 2.1 Authorization Server for authenticated MCP, or a pure resource server validating externally-issued tokens
 - **voicetools/** - Voice call control tools (transfer, hold, consult, conference)
 
 Skills can be invoked via:
@@ -125,6 +125,16 @@ rt.ServeHTTP(ctx, &runtime.HTTPServerOptions{
     Addr: ":8080",
     OAuth2: &runtime.OAuth2Options{
         Users: map[string]string{"admin": "password"},
+    },
+})
+
+// As a pure resource server validating externally-issued tokens
+// (e.g. an enterprise IdP), instead of running a local authorization server
+rt.ServeHTTP(ctx, &runtime.HTTPServerOptions{
+    Addr: ":8080",
+    ExternalAuth: &runtime.ExternalAuthOptions{
+        Verifier:             myJWTVerifier, // implements oauth2.TokenVerifier
+        AuthorizationServers: []string{"https://idp.example.com"},
     },
 })
 ```
@@ -224,7 +234,7 @@ github.com/plexusone/omniskill
 │   ├── server/  # MCP server runtime (rate limiting, tool auth, logging)
 │   ├── client/  # MCP client for remote servers
 │   ├── bridge/  # Mount remote MCP servers as local skills
-│   └── oauth2/  # OAuth 2.1 authorization server (with RFC 7009 revocation)
+│   └── oauth2/  # OAuth 2.1 authorization server (RFC 7009 revocation, external resource-server mode)
 └── doc.go
 ```
 

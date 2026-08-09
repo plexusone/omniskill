@@ -261,6 +261,50 @@ mux.Handle("/oauth/revoke", srv.RevocationHandler())
 
 The endpoint accepts an access or refresh token via `token` (and optional `token_type_hint`) and revokes it. Per the spec, it always returns `200 OK` regardless of whether the token was found, to avoid leaking token validity to callers.
 
+## External Resource Server Mode
+
+*Added in v0.12.0.* Instead of running the built-in authorization server, a server can validate tokens issued by an external authorization server (an enterprise IdP, or an ID-JAG / MCP Enterprise-Managed Authorization deployment) by implementing `oauth2.TokenVerifier`:
+
+```go
+type TokenVerifier interface {
+    VerifyToken(ctx context.Context, token string) (*TokenInfo, error)
+}
+```
+
+Implementations own all protocol-specific verification — signature checks against the issuer's JWKS, issuer/audience validation, expiry, and claim extraction. Wire it up with `ExternalAuth` instead of `OAuth2`:
+
+```go
+result, err := rt.ServeHTTP(ctx, &runtime.HTTPServerOptions{
+    Addr: ":8080",
+    ExternalAuth: &runtime.ExternalAuthOptions{
+        Verifier:             myJWTVerifier,
+        AuthorizationServers: []string{"https://idp.example.com"},
+        ScopesSupported:      []string{"mcp:read", "mcp:write"},
+    },
+})
+```
+
+`ExternalAuth` is mutually exclusive with `OAuth` and `OAuth2`. Only `/.well-known/oauth-protected-resource` is mounted (RFC 9728), advertising `AuthorizationServers`; no local `/authorize`, `/token`, or `/register` endpoints are exposed. Unauthenticated or invalid requests get a `401` with a `WWW-Authenticate: Bearer resource_metadata="..."` header pointing MCP clients at that metadata.
+
+A plain function can be adapted to the interface with `oauth2.TokenVerifierFunc`:
+
+```go
+verifier := oauth2.TokenVerifierFunc(func(ctx context.Context, token string) (*oauth2.TokenInfo, error) {
+    claims, err := verifyJWT(token) // your JWKS-backed verification
+    if err != nil {
+        return nil, err
+    }
+    return &oauth2.TokenInfo{
+        Subject: claims.Subject,
+        Scope:   claims.Scope,
+        Actor:   claims.ActorChain, // RFC 8693 "act" delegation chain, outermost first
+        Claims:  claims.Raw,
+    }, nil
+})
+```
+
+`TokenInfo.Actor` and `TokenInfo.Claims` are only populated for externally-verified tokens; read the delegation chain from a request with `oauth2.GetActorFromContext(ctx)`. Use `Claims` for custom policy decisions, e.g. with `ToolAuthorizer` (see the [server middleware guide](server.md)).
+
 ## Security Notes
 
 1. **HTTPS Required** - Always use HTTPS in production

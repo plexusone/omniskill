@@ -183,6 +183,8 @@ OAuth2 endpoints are automatically configured:
 - `/token` - Token endpoint
 - `/register` - Dynamic client registration
 
+*Added in v0.12.0.* To validate tokens from an external authorization server instead (an enterprise IdP, or an ID-JAG / MCP Enterprise-Managed Authorization deployment), use `ExternalAuth` in place of `OAuth2` — see [External Resource Server Mode](oauth2.md#external-resource-server-mode).
+
 ## Inspection
 
 ```go
