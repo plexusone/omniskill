@@ -55,6 +55,16 @@ type HTTPServerOptions struct {
 	//   - /.well-known/oauth-protected-resource - Resource metadata
 	OAuth2 *OAuth2Options
 
+	// ExternalAuth makes this server a pure OAuth resource server: bearer
+	// tokens are validated by an externally-supplied verifier (e.g. JWTs
+	// issued by an enterprise IdP or authorization server in an ID-JAG /
+	// MCP Enterprise-Managed Authorization deployment) and no local
+	// authorization server endpoints are mounted. Only
+	// /.well-known/oauth-protected-resource is exposed, advertising the
+	// external authorization servers. Mutually exclusive with OAuth and
+	// OAuth2.
+	ExternalAuth *ExternalAuthOptions
+
 	// OnReady is called when the server is ready to accept connections,
 	// before ServeHTTP blocks. This is useful for logging the server URL.
 	OnReady func(result *HTTPServerResult)
@@ -111,6 +121,27 @@ type OAuth2Options struct {
 
 	// Debug enables verbose logging for OAuth operations.
 	Debug bool
+}
+
+// ExternalAuthOptions configures resource-server authentication against
+// externally-issued tokens (see HTTPServerOptions.ExternalAuth).
+type ExternalAuthOptions struct {
+	// Verifier validates incoming bearer tokens. Required.
+	Verifier oauth2.TokenVerifier
+
+	// AuthorizationServers lists the issuer URLs of the external
+	// authorization servers that issue tokens for this resource, advertised
+	// via RFC 9728 protected resource metadata. Required.
+	AuthorizationServers []string
+
+	// Resource is the protected resource identifier (and typically the
+	// expected token audience). Defaults to the server's base URL plus the
+	// MCP path.
+	Resource string
+
+	// ScopesSupported optionally lists scopes advertised in the protected
+	// resource metadata.
+	ScopesSupported []string
 }
 
 // OAuth2Credentials contains the OAuth 2.1 server information.
@@ -192,6 +223,18 @@ func (r *Runtime) ServeHTTP(ctx context.Context, opts *HTTPServerOptions) (*HTTP
 		opts = &HTTPServerOptions{}
 	}
 
+	if opts.ExternalAuth != nil {
+		if opts.OAuth != nil || opts.OAuth2 != nil {
+			return nil, fmt.Errorf("ExternalAuth is mutually exclusive with OAuth and OAuth2")
+		}
+		if opts.ExternalAuth.Verifier == nil {
+			return nil, fmt.Errorf("ExternalAuth.Verifier is required")
+		}
+		if len(opts.ExternalAuth.AuthorizationServers) == 0 {
+			return nil, fmt.Errorf("ExternalAuth.AuthorizationServers is required")
+		}
+	}
+
 	path := opts.Path
 	if path == "" {
 		path = "/mcp"
@@ -245,6 +288,24 @@ func (r *Runtime) ServeHTTP(ctx context.Context, opts *HTTPServerOptions) (*HTTP
 	// Now set up handlers with the known base URL
 	mcpHandler := r.StreamableHTTPHandler(opts.StreamableHTTPOptions)
 	mux := http.NewServeMux()
+
+	// External resource-server auth: validate externally-issued tokens and
+	// advertise the external authorization servers; no local AS endpoints.
+	if opts.ExternalAuth != nil {
+		resource := opts.ExternalAuth.Resource
+		if resource == "" {
+			resource = baseURL + path
+		}
+
+		mux.Handle("/.well-known/oauth-protected-resource", oauth2.ExternalProtectedResourceMetadataHandler(oauth2.ExternalProtectedResourceMetadata{
+			Resource:             resource,
+			AuthorizationServers: opts.ExternalAuth.AuthorizationServers,
+			ScopesSupported:      opts.ExternalAuth.ScopesSupported,
+		}))
+
+		resourceMetadataURL := baseURL + "/.well-known/oauth-protected-resource"
+		mcpHandler = oauth2.ExternalBearerMiddleware(opts.ExternalAuth.Verifier, resourceMetadataURL)(mcpHandler)
+	}
 
 	// Set up OAuth 2.1 with PKCE if configured (preferred over legacy OAuth)
 	if opts.OAuth2 != nil {
