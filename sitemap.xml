@@ -2,202 +2,206 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://plexusone.github.io/omniskill/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/api/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/concepts/clawhub/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/concepts/installer/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/concepts/loader/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/concepts/overview/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/concepts/packs/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/concepts/registry/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/concepts/skills/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/concepts/tools/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/design/omniskill/PLAN/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/design/omniskill/PRD/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/design/omniskill/TASKS/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/design/omniskill/TRD/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/getting-started/installation/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/getting-started/quickstart/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/github/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/mcp/bridge/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/mcp/client/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/mcp/oauth2/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/mcp/server/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/migration/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/releases/v0.1.0/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/releases/v0.10.0/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/releases/v0.11.0/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
+    </url>
+    <url>
+         <loc>https://plexusone.github.io/omniskill/releases/v0.12.0/</loc>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/releases/v0.2.0/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/releases/v0.3.0/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/releases/v0.3.1/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/releases/v0.4.0/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/releases/v0.5.0/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/releases/v0.6.0/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/releases/v0.7.0/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/releases/v0.8.0/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/releases/v0.9.0/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/roles/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/roles/behaviors/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/roles/delegation/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/roles/interface/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/roles/metrics/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/roles/policies/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/roles/spec/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/roles/workflows/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/specs/ARCHITECTURE/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/specs/INTERFACE_GAPS/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/specs/PLAN/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/specs/PRD/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/specs/ROADMAP/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/specs/TRD/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/specs/features/voice-parity/PLAN/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omniskill/voicetools/</loc>
-         <lastmod>2026-08-02</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
 </urlset>

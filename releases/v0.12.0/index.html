@@ -10,9 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://plexusone.github.io/omniskill/specs/ARCHITECTURE/">
+        <link rel="canonical" href="https://plexusone.github.io/omniskill/releases/v0.12.0/">
       
       
+        <link rel="prev" href="../../api/">
+      
+      
+        <link rel="next" href="../v0.11.0/">
       
       
         
@@ -23,7 +27,7 @@
     
     
       
-        <title>OmniSkill Architecture - OmniSkill</title>
+        <title>v0.12.0 - OmniSkill</title>
       
     
     
@@ -76,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#omniskill-architecture" class="md-skip">
+        <a href="#release-notes-v0120" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OmniSkill Architecture
+              v0.12.0
             
           </span>
         </div>
@@ -1286,7 +1290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../features/voice-parity/PLAN/" class="md-nav__link">
+      <a href="../../specs/features/voice-parity/PLAN/" class="md-nav__link">
         
   
   
@@ -1345,8 +1349,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -1357,13 +1363,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
         
           
           <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
@@ -1384,7 +1388,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1399,10 +1403,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../releases/v0.12.0/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    v0.12.0
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1418,6 +1449,142 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Highlights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's New
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What&#39;s New">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#external-token-verifier-mcpoauth2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External Token Verifier (mcp/oauth2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-server-mode-on-servehttp-mcpserver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource-Server Mode on ServeHTTP (mcp/server)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delegation-chains-and-extra-claims-mcpoauth2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delegation Chains and Extra Claims (mcp/oauth2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contributors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Links
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1430,7 +1597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/v0.11.0/" class="md-nav__link">
+      <a href="../v0.11.0/" class="md-nav__link">
         
   
   
@@ -1458,7 +1625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/v0.10.0/" class="md-nav__link">
+      <a href="../v0.10.0/" class="md-nav__link">
         
   
   
@@ -1486,7 +1653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/v0.9.0/" class="md-nav__link">
+      <a href="../v0.9.0/" class="md-nav__link">
         
   
   
@@ -1514,7 +1681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/v0.8.0/" class="md-nav__link">
+      <a href="../v0.8.0/" class="md-nav__link">
         
   
   
@@ -1542,7 +1709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/v0.7.0/" class="md-nav__link">
+      <a href="../v0.7.0/" class="md-nav__link">
         
   
   
@@ -1570,7 +1737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/v0.6.0/" class="md-nav__link">
+      <a href="../v0.6.0/" class="md-nav__link">
         
   
   
@@ -1598,7 +1765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/v0.5.0/" class="md-nav__link">
+      <a href="../v0.5.0/" class="md-nav__link">
         
   
   
@@ -1626,7 +1793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/v0.4.0/" class="md-nav__link">
+      <a href="../v0.4.0/" class="md-nav__link">
         
   
   
@@ -1654,7 +1821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/v0.3.1/" class="md-nav__link">
+      <a href="../v0.3.1/" class="md-nav__link">
         
   
   
@@ -1682,7 +1849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/v0.3.0/" class="md-nav__link">
+      <a href="../v0.3.0/" class="md-nav__link">
         
   
   
@@ -1710,7 +1877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/v0.2.0/" class="md-nav__link">
+      <a href="../v0.2.0/" class="md-nav__link">
         
   
   
@@ -1738,7 +1905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/v0.1.0/" class="md-nav__link">
+      <a href="../v0.1.0/" class="md-nav__link">
         
   
   
@@ -1793,10 +1960,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#purpose" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Purpose
+        Overview
       
     </span>
   </a>
@@ -1804,10 +1971,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ecosystem-position" class="md-nav__link">
+  <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ecosystem Position
+        Installation
       
     </span>
   </a>
@@ -1815,10 +1982,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-abstractions" class="md-nav__link">
+  <a href="#highlights" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Abstractions
+        Highlights
       
     </span>
   </a>
@@ -1826,10 +1993,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#skill-system" class="md-nav__link">
+  <a href="#whats-new" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Skill System
+        What's New
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What&#39;s New">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#external-token-verifier-mcpoauth2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External Token Verifier (mcp/oauth2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-server-mode-on-servehttp-mcpserver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource-Server Mode on ServeHTTP (mcp/server)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delegation-chains-and-extra-claims-mcpoauth2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delegation Chains and Extra Claims (mcp/oauth2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
       
     </span>
   </a>
@@ -1837,10 +2054,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#role-system" class="md-nav__link">
+  <a href="#contributors" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Role System
+        Contributors
       
     </span>
   </a>
@@ -1848,43 +2065,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#registry" class="md-nav__link">
+  <a href="#links" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Registry
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mcp-bridging" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        MCP Bridging
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#distribution-pack-loader-installer-clawhub" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Distribution: Pack, Loader, Installer, ClawHub
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#design-principles" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Design Principles
+        Links
       
     </span>
   </a>
@@ -1911,142 +2095,61 @@
   
 
 
-<h1 id="omniskill-architecture">OmniSkill Architecture<a class="headerlink" href="#omniskill-architecture" title="Permanent link">&para;</a></h1>
-<h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h2>
-<p>OmniSkill is the unified skill infrastructure for AI agents in Go. It provides a common interface for defining, registering, and invoking agent capabilities across multiple execution environments, so a capability is written once and delivered anywhere: in-process (library mode), over MCP (stdio, HTTP, SSE), or as part of an agent persona (role).</p>
-<h2 id="ecosystem-position">Ecosystem Position<a class="headerlink" href="#ecosystem-position" title="Permanent link">&para;</a></h2>
-<p>OmniSkill lives in the PlexusOne organization (runtime platforms, agents, SDKs). It is the capability layer that other projects build on:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Agent Applications
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    omniagent, aha-studio (AhaSkill, 40+ tools), voice agents
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        │
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        │  define skills / register tools / assume roles
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        ▼
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>OmniSkill
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    skill/  role/  registry/  loader/  pack/  installer/  clawhub/
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        │
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        │  expose / consume
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        ▼
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>Transports
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    Library mode (direct calls)
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    MCP server (stdio, HTTP, SSE) via modelcontextprotocol/go-sdk
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    MCP client (remote servers as local skills)
+<h1 id="release-notes-v0120">Release Notes - v0.12.0<a class="headerlink" href="#release-notes-v0120" title="Permanent link">&para;</a></h1>
+<p><strong>Release Date:</strong> 2026-08-09</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>This release adds a protocol-agnostic external token verifier seam to <code>mcp/oauth2</code>, letting an MCP server run as a pure OAuth resource server against tokens issued by an external authorization server (an enterprise IdP, or an ID-JAG / MCP Enterprise-Managed Authorization deployment) instead of the built-in authorization server. No breaking changes.</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>go<span class="w"> </span>get<span class="w"> </span>github.com/plexusone/omniskill@v0.12.0
 </code></pre></div>
-<h2 id="core-abstractions">Core Abstractions<a class="headerlink" href="#core-abstractions" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Abstraction</th>
-<th>Package</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Skill</code></td>
-<td><code>skill/</code></td>
-<td>Named bundle of tools with <code>Init</code>/<code>Close</code> lifecycle; <code>BaseSkill</code> for embedding</td>
-</tr>
-<tr>
-<td><code>Tool</code></td>
-<td><code>skill/</code></td>
-<td>Individual callable with name, description, typed parameters, and handler; <code>FuncTool</code> via <code>NewTool</code></td>
-</tr>
-<tr>
-<td><code>CommandTool</code></td>
-<td><code>skill/</code></td>
-<td>Wraps a CLI command as a tool, returning a structured <code>CommandResult</code></td>
-</tr>
-<tr>
-<td><code>Role</code></td>
-<td><code>role/</code></td>
-<td>Agent persona: <code>RoleSpec</code>, system prompt, required skills, workflows</td>
-</tr>
-<tr>
-<td><code>Registry</code></td>
-<td><code>registry/</code></td>
-<td>Skill registration and discovery; <code>InMemory</code> implementation with <code>skill.tool</code> name resolution</td>
-</tr>
-<tr>
-<td><code>SkillPack</code></td>
-<td><code>pack/</code></td>
-<td>Embedded <code>embed.FS</code> of markdown skills (<code>skills/&lt;name&gt;/SKILL.md</code>, OpenClaw format)</td>
-</tr>
-<tr>
-<td>Loader</td>
-<td><code>loader/</code></td>
-<td>Discovers and loads skills in SKILL.md markdown or Go formats; <code>UnifiedLoader</code> handles both</td>
-</tr>
-<tr>
-<td>Installer</td>
-<td><code>installer/</code></td>
-<td>Dependency management for skill requirements (GitHub, ClawHub sources)</td>
-</tr>
-<tr>
-<td>Hub</td>
-<td><code>clawhub/</code></td>
-<td>ClawHub marketplace client: manifest, search, security state, resolution</td>
-</tr>
-</tbody>
-</table>
-<h2 id="skill-system">Skill System<a class="headerlink" href="#skill-system" title="Permanent link">&para;</a></h2>
-<p>A <code>Skill</code> groups related <code>Tool</code>s behind a lifecycle:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Skill (Name, Description, Init, Close)
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    └── Tools() []Tool
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>            ├── FuncTool      Go function handler (NewTool)
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>            └── CommandTool   CLI command wrapper (NewCommandTool)
+<p>Requires Go 1.26+ and MCP Go SDK v1.7.0+.</p>
+<h2 id="highlights">Highlights<a class="headerlink" href="#highlights" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>External resource-server mode</strong> - <code>HTTPServerOptions.ExternalAuth</code> validates externally-issued bearer tokens instead of running a local authorization server</li>
+<li><strong>Delegation chains</strong> - <code>TokenInfo.Actor</code> carries an RFC 8693 <code>act</code> delegation chain (e.g. orchestrator-acting-for-worker) into request context</li>
+<li><strong>RFC 9728 metadata</strong> - protected resource metadata advertises the external authorization servers and the correct <code>WWW-Authenticate</code> challenge on 401s</li>
+</ul>
+<h2 id="whats-new">What's New<a class="headerlink" href="#whats-new" title="Permanent link">&para;</a></h2>
+<h3 id="external-token-verifier-mcpoauth2">External Token Verifier (<code>mcp/oauth2</code>)<a class="headerlink" href="#external-token-verifier-mcpoauth2" title="Permanent link">&para;</a></h3>
+<p><code>TokenVerifier</code> is a small interface that lets any protocol-specific verifier (JWT/JWKS, introspection, etc.) plug into the server without <code>mcp/oauth2</code> taking on that dependency:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">type</span><span class="w"> </span><span class="nx">TokenVerifier</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nx">VerifyToken</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">TokenInfo</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">}</span>
 </code></pre></div>
-<p>Tools declare parameters as <code>map[string]skill.Parameter</code> (type, required, description, enum, default). Handlers receive <code>context.Context</code> and <code>map[string]any</code> and return any value or an error.</p>
-<h2 id="role-system">Role System<a class="headerlink" href="#role-system" title="Permanent link">&para;</a></h2>
-<p>Roles compose skills into agent personas. A <code>Role</code> provides a system prompt, declares <code>RequiredSkills()</code>, and receives resolved skills at <code>Init</code>. Optional capability interfaces extend a role without bloating the core contract:</p>
-<ul>
-<li><code>SkillRequirer</code> — optional skills beyond the required set</li>
-<li><code>BehaviorProvider</code> — event-driven behaviors (<code>BehaviorTrigger</code> → <code>BehaviorAction</code>)</li>
-<li><code>PolicyProvider</code> — policies with rules, targets, and enforcement modes</li>
-<li><code>MetricsProvider</code> — role success metrics</li>
-<li><code>DelegationProvider</code> — delegation rules, budgets, and retry policies</li>
-<li><code>SubRole</code> — hierarchical roles with <code>SubRoleOverrides</code></li>
-</ul>
-<p>Roles may also declare structured <code>Workflow</code>s that produce <code>WorkflowResult</code>s with <code>Artifact</code>s and <code>Action</code>s.</p>
-<h2 id="registry">Registry<a class="headerlink" href="#registry" title="Permanent link">&para;</a></h2>
-<p><code>registry.InMemory</code> maps skill names to skills and resolves tools by full name (<code>skill.tool</code>). It owns skill lifecycle: <code>Init(ctx)</code> initializes all registered skills; <code>Close()</code> releases them. The MCP server runtime consumes the same skills, so library mode and MCP mode share one registration path.</p>
-<h2 id="mcp-bridging">MCP Bridging<a class="headerlink" href="#mcp-bridging" title="Permanent link">&para;</a></h2>
-<p><code>mcp/server</code> wraps the official <code>modelcontextprotocol/go-sdk</code>:</p>
-<ul>
-<li><code>Runtime</code> holds tools, prompts, and resources; <code>RegisterSkill</code> / <code>RegisterSkillWithPrefix</code> project a skill's tools into MCP tools.</li>
-<li>Library mode: <code>rt.CallTool(ctx, name, params)</code> — direct invocation, no JSON-RPC or transport.</li>
-<li>Server mode: <code>ServeStdio</code> (Claude Desktop), <code>ServeHTTP</code> with SSE, optional ngrok tunneling, and OAuth 2.1 (<code>mcp/oauth2</code>, PKCE) for authenticated HTTP.</li>
-</ul>
-<p><code>mcp/client</code> consumes remote MCP servers and surfaces their tools as local skills, making remote and local capabilities symmetric.</p>
-<h2 id="distribution-pack-loader-installer-clawhub">Distribution: Pack, Loader, Installer, ClawHub<a class="headerlink" href="#distribution-pack-loader-installer-clawhub" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Author                 Distribute              Consume
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>──────                 ──────────              ───────
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>SKILL.md (OpenClaw)    SkillPack (embed.FS)    loader.DiscoverSkills / UnifiedLoader
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Go skill (skill.Skill) ClawHub manifest        installer (requirements, install steps)
+<p>Adapters such as <code>github.com/aistandardsio/agent-protocols/adapters/omniskill</code> supply ID-JAG-aware implementations; a plain function can also be adapted with <code>TokenVerifierFunc</code>.</p>
+<p><code>ExternalBearerMiddleware(verifier, resourceMetadataURL)</code> wraps a handler so that requests are authenticated against the verifier, storing the resulting <code>TokenInfo</code> in context, and unauthenticated/invalid requests get a <code>WWW-Authenticate: Bearer resource_metadata="..."</code> challenge per the MCP authorization spec.</p>
+<p><code>ExternalProtectedResourceMetadataHandler</code> serves RFC 9728 protected resource metadata listing the external authorization servers, mounted at <code>/.well-known/oauth-protected-resource</code>.</p>
+<h3 id="resource-server-mode-on-servehttp-mcpserver">Resource-Server Mode on <code>ServeHTTP</code> (<code>mcp/server</code>)<a class="headerlink" href="#resource-server-mode-on-servehttp-mcpserver" title="Permanent link">&para;</a></h3>
+<p><code>HTTPServerOptions.ExternalAuth</code> runs the server as a pure resource server — only the protected resource metadata endpoint is mounted, no local authorization server endpoints:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">rt</span><span class="p">.</span><span class="nx">ServeHTTP</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">runtime</span><span class="p">.</span><span class="nx">HTTPServerOptions</span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nx">Addr</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;:8080&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nx">ExternalAuth</span><span class="p">:</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">runtime</span><span class="p">.</span><span class="nx">ExternalAuthOptions</span><span class="p">{</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">        </span><span class="nx">Verifier</span><span class="p">:</span><span class="w">             </span><span class="nx">myJWTVerifier</span><span class="p">,</span><span class="w"> </span><span class="c1">// implements oauth2.TokenVerifier</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span><span class="nx">AuthorizationServers</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;https://idp.example.com&quot;</span><span class="p">},</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">})</span>
 </code></pre></div>
+<p><code>ExternalAuth</code> is mutually exclusive with <code>OAuth</code> and <code>OAuth2</code>; <code>Verifier</code> and <code>AuthorizationServers</code> are required and validated at <code>ServeHTTP</code> call time.</p>
+<h3 id="delegation-chains-and-extra-claims-mcpoauth2">Delegation Chains and Extra Claims (<code>mcp/oauth2</code>)<a class="headerlink" href="#delegation-chains-and-extra-claims-mcpoauth2" title="Permanent link">&para;</a></h3>
+<p><code>TokenInfo</code> gains two fields populated by external verifiers:</p>
 <ul>
-<li><code>loader/</code> inspects a directory, detects format (markdown or Go), parses SKILL.md YAML frontmatter (<code>SkillMetadata</code>, <code>Requirements</code>, <code>InstallStep</code>), and loads through one <code>UnifiedLoader</code>.</li>
-<li><code>pack/</code> embeds markdown skills into a Go binary via <code>embed.FS</code>, versioned by source commit hash for traceability.</li>
-<li><code>installer/</code> resolves and installs skill requirements from GitHub or ClawHub sources.</li>
-<li><code>clawhub/</code> is the marketplace client: search, manifests with dependencies, and a <code>SecurityState</code> gate on discovered skills.</li>
+<li><code>Actor []string</code> - the delegation chain acting on behalf of <code>Subject</code>, outermost actor first (from nested <code>act</code> claims, RFC 8693). Read it from a request with <code>oauth2.GetActorFromContext(ctx)</code>.</li>
+<li><code>Claims map[string]any</code> - additional claims from the external token, for use in custom policy decisions (e.g. with <code>ToolAuthorizer</code>).</li>
 </ul>
-<h2 id="design-principles">Design Principles<a class="headerlink" href="#design-principles" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p><strong>Write once, invoke anywhere.</strong> The same <code>Skill</code> serves library mode, MCP stdio, and MCP HTTP without modification.</p>
-</li>
-<li>
-<p><strong>Small core, optional capability interfaces.</strong> <code>Skill</code> and <code>Role</code> stay minimal; behaviors, policies, metrics, and delegation are opt-in interfaces.</p>
-</li>
-<li>
-<p><strong>Two authoring formats, one loader.</strong> Markdown (SKILL.md) for prompt-centric skills, Go for programmatic tools; <code>UnifiedLoader</code> treats them uniformly.</p>
-</li>
-<li>
-<p><strong>Official SDK underneath.</strong> MCP behavior is delegated to <code>modelcontextprotocol/go-sdk</code> rather than reimplemented.</p>
-</li>
-<li>
-<p><strong>Traceable distribution.</strong> Packs carry source commit hashes; ClawHub manifests declare dependencies and security state.</p>
-</li>
-</ol>
+<p>Both are empty/nil for tokens issued by the built-in authorization server.</p>
+<h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
+<p>No dependency changes.</p>
+<h2 id="contributors">Contributors<a class="headerlink" href="#contributors" title="Permanent link">&para;</a></h2>
+<ul>
+<li>John Wang</li>
+<li>Claude Opus 4.8</li>
+</ul>
+<h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/plexusone/omniskill">GitHub Repository</a></li>
+<li><a href="https://pkg.go.dev/github.com/plexusone/omniskill">Go Package Documentation</a></li>
+<li><a href="https://github.com/plexusone/omniskill/blob/main/docs/mcp/oauth2.md">OAuth 2.1 Authentication Guide</a></li>
+</ul>
 
 
 

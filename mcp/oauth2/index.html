@@ -1066,6 +1066,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#external-resource-server-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External Resource Server Mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#security-notes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1663,6 +1674,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../releases/v0.12.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    v0.12.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../releases/v0.11.0/" class="md-nav__link">
         
   
@@ -2225,6 +2264,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#external-resource-server-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External Resource Server Mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#security-notes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2468,6 +2518,38 @@
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nx">mux</span><span class="p">.</span><span class="nx">Handle</span><span class="p">(</span><span class="s">&quot;/oauth/revoke&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">srv</span><span class="p">.</span><span class="nx">RevocationHandler</span><span class="p">())</span>
 </code></pre></div>
 <p>The endpoint accepts an access or refresh token via <code>token</code> (and optional <code>token_type_hint</code>) and revokes it. Per the spec, it always returns <code>200 OK</code> regardless of whether the token was found, to avoid leaking token validity to callers.</p>
+<h2 id="external-resource-server-mode">External Resource Server Mode<a class="headerlink" href="#external-resource-server-mode" title="Permanent link">&para;</a></h2>
+<p><em>Added in v0.12.0.</em> Instead of running the built-in authorization server, a server can validate tokens issued by an external authorization server (an enterprise IdP, or an ID-JAG / MCP Enterprise-Managed Authorization deployment) by implementing <code>oauth2.TokenVerifier</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kd">type</span><span class="w"> </span><span class="nx">TokenVerifier</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="nx">VerifyToken</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">TokenInfo</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="p">}</span>
+</code></pre></div>
+<p>Implementations own all protocol-specific verification — signature checks against the issuer's JWKS, issuer/audience validation, expiry, and claim extraction. Wire it up with <code>ExternalAuth</code> instead of <code>OAuth2</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nx">result</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">rt</span><span class="p">.</span><span class="nx">ServeHTTP</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">runtime</span><span class="p">.</span><span class="nx">HTTPServerOptions</span><span class="p">{</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span><span class="nx">Addr</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;:8080&quot;</span><span class="p">,</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="nx">ExternalAuth</span><span class="p">:</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">runtime</span><span class="p">.</span><span class="nx">ExternalAuthOptions</span><span class="p">{</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">        </span><span class="nx">Verifier</span><span class="p">:</span><span class="w">             </span><span class="nx">myJWTVerifier</span><span class="p">,</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">        </span><span class="nx">AuthorizationServers</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;https://idp.example.com&quot;</span><span class="p">},</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">        </span><span class="nx">ScopesSupported</span><span class="p">:</span><span class="w">      </span><span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;mcp:read&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mcp:write&quot;</span><span class="p">},</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="p">})</span>
+</code></pre></div>
+<p><code>ExternalAuth</code> is mutually exclusive with <code>OAuth</code> and <code>OAuth2</code>. Only <code>/.well-known/oauth-protected-resource</code> is mounted (RFC 9728), advertising <code>AuthorizationServers</code>; no local <code>/authorize</code>, <code>/token</code>, or <code>/register</code> endpoints are exposed. Unauthenticated or invalid requests get a <code>401</code> with a <code>WWW-Authenticate: Bearer resource_metadata="..."</code> header pointing MCP clients at that metadata.</p>
+<p>A plain function can be adapted to the interface with <code>oauth2.TokenVerifierFunc</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nx">verifier</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">oauth2</span><span class="p">.</span><span class="nx">TokenVerifierFunc</span><span class="p">(</span><span class="kd">func</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">oauth2</span><span class="p">.</span><span class="nx">TokenInfo</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span><span class="nx">claims</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">verifyJWT</span><span class="p">(</span><span class="nx">token</span><span class="p">)</span><span class="w"> </span><span class="c1">// your JWKS-backed verification</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">nil</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">oauth2</span><span class="p">.</span><span class="nx">TokenInfo</span><span class="p">{</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">        </span><span class="nx">Subject</span><span class="p">:</span><span class="w"> </span><span class="nx">claims</span><span class="p">.</span><span class="nx">Subject</span><span class="p">,</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">        </span><span class="nx">Scope</span><span class="p">:</span><span class="w">   </span><span class="nx">claims</span><span class="p">.</span><span class="nx">Scope</span><span class="p">,</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">        </span><span class="nx">Actor</span><span class="p">:</span><span class="w">   </span><span class="nx">claims</span><span class="p">.</span><span class="nx">ActorChain</span><span class="p">,</span><span class="w"> </span><span class="c1">// RFC 8693 &quot;act&quot; delegation chain, outermost first</span>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">        </span><span class="nx">Claims</span><span class="p">:</span><span class="w">  </span><span class="nx">claims</span><span class="p">.</span><span class="nx">Raw</span><span class="p">,</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="kc">nil</span>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="p">})</span>
+</code></pre></div>
+<p><code>TokenInfo.Actor</code> and <code>TokenInfo.Claims</code> are only populated for externally-verified tokens; read the delegation chain from a request with <code>oauth2.GetActorFromContext(ctx)</code>. Use <code>Claims</code> for custom policy decisions, e.g. with <code>ToolAuthorizer</code> (see the <a href="../server/">server middleware guide</a>).</p>
 <h2 id="security-notes">Security Notes<a class="headerlink" href="#security-notes" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>HTTPS Required</strong> - Always use HTTPS in production</li>

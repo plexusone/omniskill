@@ -1713,6 +1713,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../releases/v0.12.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    v0.12.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../releases/v0.11.0/" class="md-nav__link">
         
   
@@ -2494,6 +2522,7 @@
 <li><code>/token</code> - Token endpoint</li>
 <li><code>/register</code> - Dynamic client registration</li>
 </ul>
+<p><em>Added in v0.12.0.</em> To validate tokens from an external authorization server instead (an enterprise IdP, or an ID-JAG / MCP Enterprise-Managed Authorization deployment), use <code>ExternalAuth</code> in place of <code>OAuth2</code> — see <a href="../oauth2/#external-resource-server-mode">External Resource Server Mode</a>.</p>
 <h2 id="inspection">Inspection<a class="headerlink" href="#inspection" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1">// List registered tools</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nx">tools</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">rt</span><span class="p">.</span><span class="nx">ListTools</span><span class="p">()</span>
