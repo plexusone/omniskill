@@ -128,6 +128,16 @@ type TokenInfo struct {
 	// Scope is the granted scope.
 	Scope string `json:"scope,omitempty"`
 
+	// Actor is the delegation chain acting on behalf of Subject, outermost
+	// actor first (e.g., ["agent:orchestrator", "agent:worker"]). Populated
+	// by external verifiers from nested "act" claims (RFC 8693); empty for
+	// tokens issued by the built-in authorization server.
+	Actor []string `json:"actor,omitempty"`
+
+	// Claims holds additional claims from externally-issued tokens for
+	// policy decisions. Nil for tokens issued by the built-in server.
+	Claims map[string]any `json:"claims,omitempty"`
+
 	// ExpiresAt is when the access token expires.
 	ExpiresAt time.Time `json:"expires_at"`
 

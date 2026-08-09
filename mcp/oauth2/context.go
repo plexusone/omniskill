@@ -52,3 +52,13 @@ func GetScopeFromContext(ctx context.Context) string {
 	}
 	return info.Scope
 }
+
+// GetActorFromContext returns the delegation chain (outermost actor first)
+// from the context. Returns nil if not found or the token has no actors.
+func GetActorFromContext(ctx context.Context) []string {
+	info := GetTokenInfoContext(ctx)
+	if info == nil {
+		return nil
+	}
+	return info.Actor
+}
