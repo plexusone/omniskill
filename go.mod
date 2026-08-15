@@ -3,7 +3,7 @@ module github.com/plexusone/omniskill
 go 1.26.0
 
 require (
-	github.com/grokify/mogo v0.74.6
+	github.com/grokify/mogo v0.74.7
 	github.com/modelcontextprotocol/go-sdk v1.7.0
 	golang.ngrok.com/ngrok v1.13.0
 	golang.org/x/mod v0.39.0
